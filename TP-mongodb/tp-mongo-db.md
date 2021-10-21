@@ -39,20 +39,20 @@ sudo service mongod start
 
 Si la commande échoue, vous pouvez démarrer mongo manuellement en suivant les étapes suivantes. Dans ce cas mongo ne sera pas un service mais ne vous empêchera pas de suivre le TP.
 ```
-sudo mkdir -p /data/db
-sudo  nohup mongod & 
+$ sudo mkdir -p /data/db
+$ sudo  nohup mongod & 
 ```
 
 Pour vérifier que mongo est bien demarré vous pouvez exécuter cette commande.
 La ligne de commande de mongo devrait s'activer.
 
 ```
-mongo
+$ mongo
 ```
 
 Exécuter cette requête
 ```
->show dbs
+show dbs
 ```
 
 ## Commande de base
@@ -60,11 +60,9 @@ Exécuter cette requête
 Connexion à une base : use nom_de_la_base. Cette commande possède une double fonction, elle assure la connexion si la base existe, elle la crée puis s’y connecte si la base n’existe pas encore. Une fois connecté, la commande db permet de connaître la base.
 
 ```
-> use iris_user_db
-switched to db iris_user_db
-> db
-iris_user_db
->
+use iris_user_db
+db
+
 ```
 
 La syntaxe utilisée est une syntaxe JavaScript  
@@ -187,7 +185,7 @@ La base de données sera nommée : prix_nobel_db
 La collection sera nommée : laureat
 La syntaxe
 ```
-mongoimport --db my_db_name --collection collectionName --file fileName.json
+$ mongoimport --db my_db_name --collection collectionName --file fileName.json
 ```
 
 1. Combien de documents ont été importés ?
