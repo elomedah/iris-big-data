@@ -189,7 +189,7 @@ $ mongoimport --db my_db_name --collection collectionName --file fileName.json
 ```
 
 1. Combien de documents ont été importés ?
-2. Que fait la commande db .laureat?Find One()?
+2. Que fait la commande db.laureat.findOne()?
 3. Quels lauréats à gagner le prix Nobel en 2000 en médecine ?
 4. Afficher les lauréats
 5. Afficher uniquement les catégories où le prix Nobel est décerné
