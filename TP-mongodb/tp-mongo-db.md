@@ -4,7 +4,6 @@
 Rappels :
 
 MongoDB est un système de gestion de bases de données (SGBD) qui gère plusieurs bases de données.   
-Ce concept est identique dans un SGBD relationnel.
 
 Chaque base contient plusieurs collections. La collection peut être vue comme une table.   
 
