@@ -181,9 +181,9 @@ https://docs.mongodb.com/database-tools/mongoimport/
 ```
 $ wget https://raw.githubusercontent.com/elomedah/iris-2020/main/prix-nobel.json
 ```
-La base de données sera nommée : prix_nobel_db
-La collection sera nommée : laureat
-La syntaxe
+La base de données sera nommée : prix_nobel_db   
+La collection sera nommée : laureat   
+La syntaxe est    
 ```
 $ mongoimport --db my_db_name --collection collectionName --file fileName.json
 ```
