@@ -26,6 +26,10 @@
       <value>127.0.0.1</value>
    </property>
    <property>
+	  <name>yarn.resourcemanager.webapp.address</name>
+      <value>127.0.0.1:8088</value>
+   </property>
+   <property>
       <name>yarn.acl.enable</name>
       <value>0</value>
    </property>
