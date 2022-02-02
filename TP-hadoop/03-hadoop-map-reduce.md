@@ -128,9 +128,37 @@ Copier le fichier local file.txt dans le repertoire input-01
 Après exécution le resultat sera dans le repertoire output-01.   
 Vérifier que le résultat est le même que précedemment.
 
-#### Exécution en mode batch vs hadoop Perf
+####  hadoop Perf (Mode distribué)
 
 Nous avons utilisé hadoop Map reduce pour faire un traitement que nous pouvions faire simplement sur linux.
 Pour voir l'impact d'utilisation d'hadoop nous allons exécuter le programme sur un texte volumineux.
+
+```
+wget https://r-stat-sc-donnees.github.io/LesMiserables1.txt
+```
+Créer un très gros fichier 
+```
+for i in {1..100} do cat LesMiserables1.txt >> BigLesMiserables1.txt done
+```
+
+Executer les scripts  sur linux 
+
+```
+time cat BigLesMiserables1.txt | python3 mapper.py | sort | python3 reducer.py
+```
+
+Notez le temps d'exécution.
+
+Créer un nouveau repertoire input-02 dans hdfs et copier le fichier BigLesMiserables1.txt dedans
+
+```
+time  hadoop jar  $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar -Dmapreduce.job.maps=5  -Dmapreduce.job.reduces=5 \
+ -files mapper.py,reducer.py   \
+ -mapper mapper.py  \
+ -reducer reducer.py \
+ -input /input-02 \
+ -output /output-02 
+```
+
 
 
