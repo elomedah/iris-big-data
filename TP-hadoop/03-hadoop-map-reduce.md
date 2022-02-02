@@ -73,7 +73,8 @@ for line in sys.stdin:
             print(current_word, current_count)
         current_count = count
         current_word = word
-print(current_word, current_count)	
+if current_word is not None:
+    print(current_word, current_count)	
 
 ```
 
