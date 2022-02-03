@@ -7,7 +7,7 @@ Pour installer hadoop nous avons besoin :
 1. java
 ```
 sudo apt-get update
-sudo apt install default-jre
+sudo apt install openjdk-11-jre-headless
 java -version 
 ```
 2. ssh 
