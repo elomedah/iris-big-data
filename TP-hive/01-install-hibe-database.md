@@ -224,6 +224,8 @@ Afficher les databases
 ```
 show databases
 ```
+
+```
 +----------------+
 | database_name  |
 +----------------+
