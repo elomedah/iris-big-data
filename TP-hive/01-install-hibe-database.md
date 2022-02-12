@@ -231,6 +231,7 @@ show databases
 | irisdata       |
 +----------------+
 2 rows selected (0.087 seconds)
+```
 
 Sélectionner la base de donnée irisdata
 
