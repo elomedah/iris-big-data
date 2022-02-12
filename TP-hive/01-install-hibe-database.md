@@ -59,3 +59,11 @@ Ce fichier contient une variable HIVE_HOME positionner par défaut sur /home/iri
 wget https://raw.githubusercontent.com/elomedah/iris-big-data/master/TP-hive/hive-bash-var.sh
 cat hive-bash-var.sh >> ~/.bashrc
 ```
+
+Télécharger le fichier de configurer hive-site.xml et déplacer le dans le dossier /home/iris/tp-hive/hive/conf
+
+```
+wget https://raw.githubusercontent.com/elomedah/iris-big-data/master/TP-hive/hive-site.xml
+mv hive-site.xml /home/iris/tp-hive/hive/conf
+```
+
