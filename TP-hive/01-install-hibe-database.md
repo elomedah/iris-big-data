@@ -23,13 +23,39 @@ Il y a quatre formats de fichiers pris en charge par Hive:
 Pour effectuer ce TP vous devez au préalable :
 
 * Installer une machine virtuelle ubuntu ( si vous êtes sur windows vous pouvez utiliser wsl https://docs.microsoft.com/fr-fr/windows/wsl/install )   
+* Créer un user "iris" ( Vous devez travailler dans le repertoire /home/iris)
 * Effectuer les TP sur Hadoop (installation et prise en main)
 * Connaître les bases du requêtage SQL
 
 
 ## Installation
+Créer le repertoire de travail tp-hive sous votre home ~
 
+```
+cd
+mkdir tp-hive
+cd tp-hive
+```
 
-### Télécharger
+### Télécharger et decompresser
+
+```
+wget https://apache.osuosl.org/hive/hive-3.1.2/apache-hive-3.1.2-bin.tar.gz
+```
+A la fin du téléchargement, dézipper le fichier et renommer le repertoire hive (pour faciliter l'accès)
+
+```
+tar -xzf apache-hive-3.1.2-bin.tar.gz 
+mv apache-hive-3.1.2 hive
+```
 
 ### Configurer
+
+Les variables d'environnement hive
+Télécharger ce fichier https://raw.githubusercontent.com/elomedah/iris-big-data/master/TP-hive/hive-bash-var.sh et ajouter son contenu dans le fichier .bashrc   
+Ce fichier contient une variable HIVE_HOME positionner par défaut sur /home/iris/tp-hive/hive
+
+```
+wget https://raw.githubusercontent.com/elomedah/iris-big-data/master/TP-hive/hive-bash-var.sh
+cat hive-bash-var.sh >> ~/.bashrc
+```
