@@ -65,6 +65,14 @@ Télécharger le fichier de configurer hive-site.xml et déplacer le dans le dos
 
 ```
 wget https://raw.githubusercontent.com/elomedah/iris-big-data/master/TP-hive/hive-site.xml
+
+Remplacer les variables :
+1. ${system:java.io.tmpdir par /tmp/hive
+2. ${system:user.name} par l'utilisateur iris
+
+sed -i 's/\${system:java.io.tmpdir}/\/tmp\/hive/g' /home/iris/tp-hive/hive/conf/hive-site.xml
+sed -i 's/\${system:user.name}/iris/g' /home/iris/tp-hive/hive/conf/hive-site.xml
+
 mv hive-site.xml /home/iris/tp-hive/hive/conf
 ```
 
@@ -88,7 +96,7 @@ hadoop fs -chmod g+w /user/tmp
 hadoop fs -chmod g+w /user/hive/warehouse
 ```
 
-### Démarrer
+### Initialisation hive
 Après l'installation d'Apache Hive, avant de commencer à utiliser Hive, vous devez initialiser la base de données Metastore avec le type de base de données que vous choisissez.    
 Par défaut, Hive utilise la base de données Derby, vous pouvez également choisir n'importe quelle base de données RDBS pour Metastore.
 
@@ -103,6 +111,34 @@ Vérifier la version hive
 
 ```
 $HIVE_HOME/bin/hive --version
+
+ou simplement
+
+hive --version
 ```
 
 La version affichée devrait être 3.2.1
+
+### Console Hive, Configuration beeline et création de compte hive
+
+Ouvrir la console hive
+```
+hive
+```
+
+Sur la console quis s'affiche avec *hive>* afficher toutes les bases de données
+
+```
+show databases
+```
+
+Le résultat devrait ressembler au contenu suivant :
+
+```
+hive> show databases;
+OK
+default
+Time taken: 0.277 seconds, Fetched: 1 row(s)
+```
+
+
