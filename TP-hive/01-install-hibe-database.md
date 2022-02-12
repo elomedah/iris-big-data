@@ -51,6 +51,7 @@ mv apache-hive-3.1.2 hive
 
 ### Configurer
 
+#### Variable et fichier de conf
 Les variables d'environnement hive
 Télécharger ce fichier https://raw.githubusercontent.com/elomedah/iris-big-data/master/TP-hive/hive-bash-var.sh et ajouter son contenu dans le fichier .bashrc   
 Ce fichier contient une variable HIVE_HOME positionner par défaut sur /home/iris/tp-hive/hive
@@ -67,3 +68,41 @@ wget https://raw.githubusercontent.com/elomedah/iris-big-data/master/TP-hive/hiv
 mv hive-site.xml /home/iris/tp-hive/hive/conf
 ```
 
+#### Préparation stockage sur hadoop hdfs
+Créer le repertoire /user/hive/warehouse dans hdfs. Ce repertoire est sera le repertoire du datawarehouse
+
+```
+hadoop fs -mkdir -p /user/hive/warehouse
+```
+
+Créer le repertoire temporaire tmp.
+
+```
+hadoop dfs -mkdir -p /user/tmp
+```
+
+Nous devons autoriser hive à écrire dans les répertoires que nous venons de créer
+
+```
+hadoop fs -chmod g+w /user/tmp
+hadoop fs -chmod g+w /user/hive/warehouse
+```
+
+### Démarrer
+Après l'installation d'Apache Hive, avant de commencer à utiliser Hive, vous devez initialiser la base de données Metastore avec le type de base de données que vous choisissez.    
+Par défaut, Hive utilise la base de données Derby, vous pouvez également choisir n'importe quelle base de données RDBS pour Metastore.
+
+```
+Charger les variables à partir de .bashrc
+source ~/.bashrc
+Initialiser la base de donnée qui sera utilisée pour le Metastore
+$HIVE_HOME/bin/schematool -initSchema -dbType derby
+```
+
+Vérifier la version hive
+
+```
+$HIVE_HOME/bin/hive --version
+```
+
+La version affichée devrait être 3.2.1
