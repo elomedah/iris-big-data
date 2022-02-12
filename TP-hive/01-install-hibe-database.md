@@ -27,6 +27,13 @@ Pour effectuer ce TP vous devez au préalable :
 * Effectuer les TP sur Hadoop (installation et prise en main)
 * Connaître les bases du requêtage SQL
 
+Hive ne fonctionne pas avec java11 ni java9.
+
+Vous devez donc installer java8
+
+```
+sudo apt install openjdk-8-jdk
+```
 
 ## Installation
 Créer le repertoire de travail tp-hive sous votre home ~
@@ -119,14 +126,14 @@ hive --version
 
 La version affichée devrait être 3.2.1
 
-### Console Hive, Configuration beeline et création de compte hive
+### Console Hive CLI, Configuration beeline 
 
 Ouvrir la console hive
 ```
 hive
 ```
 
-Sur la console quis s'affiche avec *hive>* afficher toutes les bases de données
+Sur la console qui s'affiche avec *hive>* afficher toutes les bases de données
 
 ```
 show databases
@@ -141,4 +148,126 @@ default
 Time taken: 0.277 seconds, Fetched: 1 row(s)
 ```
 
+Il existe plusieurs limitations de Hive CLI, par conséquent, dans la nouvelle version, elle a été obsolète et a introduit Beeline pour se connecter à Hive.
+
+Hive beeline peut être exécuté en mode intégré, ce qui est un moyen rapide d'exécuter certaines requêtes HiveQL, ceci est similaire à Hive CLI (ancienne version).
+
+Utilisateur : *iris*
+Mot de passe : *iris* 
+```
+beeline -u jdbc:hive2:// -n iris -p iris
+```
+Sur la console qui s'affiche avec *hive>* afficher toutes les bases de données
+Afficher les databases 
+
+
+Vous devez avoir le résultat suivant
+
+```
+0: jdbc:hive2://> show databases;
+OK
++----------------+
+| database_name  |
++----------------+
+| default        |
++----------------+
+1 row selected (0.052 seconds)
+```
+
+### Configuration hiveServer2
+
+HiveServer2 (HS2) est une interface serveur qui permet aux clients distants d'exécuter des requêtes sur Hive et de récupérer les résultats (une introduction plus détaillée ici).    
+L'implémentation actuelle, basée sur Thrift RPC (http://thrift.apache.org/docs/), est une version améliorée de HiveServer et prend en charge la concurrence et l'authentification multi-clients. Il est conçu pour fournir une meilleure prise en charge des clients API ouverts tels que JDBC et ODBC. 
+
+Pour plus de détail : https://cwiki.apache.org/confluence/display/hive/setting+up+hiveserver2 
+
+```
+$HIVE_HOME/bin/hiveserver2
+ou
+$HIVE_HOME/bin/hive --service hiveserver2
+```
+Vous pouvez maintenant vous connecter à Hive à partir d'un serveur distant à l'aide de Beeline ou à partir d'applications Java, Scala, Python ou dbeaver à l'aide de la chaîne de connexion Hive JDBC
+
+Sur un autre terminal ubuntu
+
+```
+beeline -u jdbc:hive2://127.0.0.1:10000 iris iris --showDbInPrompt=true
+```
+
+Vous devez avoir le résultat suivant 
+
+```
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+Connecting to jdbc:hive2://127.0.0.1:10000
+Connected to: Apache Hive (version 3.1.2)
+Driver: Hive JDBC (version 3.1.2)
+Transaction isolation: TRANSACTION_REPEATABLE_READ
+Beeline version 3.1.2 by Apache Hive
+0: jdbc:hive2://127.0.0.1:10000>
+```
+
+### Tester les requêtes de base
+
+#### Créer une database
+
+```
+CREATE DATABASE IF NOT EXISTS irisdata;
+
+or
+
+CREATE SCHEMA irisdata;
+
+```
+Afficher les databases
+
+```
+show databases
+```
++----------------+
+| database_name  |
++----------------+
+| default        |
+| irisdata       |
++----------------+
+2 rows selected (0.087 seconds)
+
+Sélectionner la base de donnée irisdata
+
+```
+use irisdata;
+```
+
+Sur la console
+
+```
+jdbc:hive2://127.0.0.1:10000 (irisdata)>
+```
+#### Créer une table 
+
+Nous allons créer les tables sur la base default
+
+```
+ CREATE TABLE etudiant (nom VARCHAR(64), prenom VARCHAR(64), universite VARCHAR(128), age INT);
+ 
+```
+Afficher les tables
+
+```
+show tables
+```
+
+#### Insérer les données
+
+```
+ INSERT INTO TABLE etudiant (nom, prenom, universite, age, note) 
+ values ('Anna', 'Simons','Iris Paris', 18), 
+ ('Simo', 'Abel','Iris Reims', 20),
+ ('Zemm', 'Patric','Iris Lyon', 18);
+```
+#### Sélectionner les données
+
+```
+SELECT * FROM etudiant
+```
 
