@@ -306,3 +306,10 @@ hadoop fs -ls /user/hive/warehouse/irisdata.db
 hadoop fs -ls /user/hive/warehouse/irisdata.db/etudiant
 ```
 
+```
+hadoop fs -cat /user/hive/warehouse/irisdata.db/etudiant/*
+```
+
+#### Créer une table à partir d'un fichier
+
+
