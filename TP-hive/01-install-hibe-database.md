@@ -268,9 +268,41 @@ show tables
  ('Simo', 'Abel','Iris Reims', 20),
  ('Zemm', 'Patric','Iris Lyon', 18);
 ```
+
+```
+ INSERT INTO TABLE etudiant (nom, prenom, universite, age) 
+ values ('Epihapnie', 'Vargas','Iris Paris', 30), 
+ ('Crina', 'Toko','Mediaschool Rennes Iris', 20),
+ ('Solange', 'Abou','Iris Paris', 15), 
+ ('Carine', 'Lasse','Mediaschool Rennes Iris', 13),
+ ('Cecile', 'Paul','Iris Lyon', 19);
+```
+
+```
+ INSERT INTO TABLE etudiant (nom, prenom, universite, age)  values ('Georges', 'kopa','Iris Paris', 21);
+```
+
 #### Sélectionner les données
 
 ```
 SELECT * FROM etudiant
+```
+
+#### Emplacement des données dans hdfs
+
+Comme mentionné plus haut, hive stocke les données sur HDFS dans le repertoire  /user/hive/warehouse/
+
+En executant ces commandes, que remarquez ?
+
+```
+hadoop fs -ls /user/hive/warehouse/
+```
+
+```
+hadoop fs -ls /user/hive/warehouse/irisdata.db
+```
+
+```
+hadoop fs -ls /user/hive/warehouse/irisdata.db/etudiant
 ```
 
