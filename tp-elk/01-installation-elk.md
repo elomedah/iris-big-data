@@ -147,7 +147,7 @@ Ouvrez un terminal
 
 ## Logstash
 1-   Positionnez vous  dans le répertoire logstash
-2-   Exécutez cette commande ./bin/logstash.bat -f ../tp-config/test.conf 
+2-   Exécutez cette commande ./bin/logstash.sh -f ../tp-config/test.conf 
 
 ```
 ./bin/logstash.sh -f ../tp-config/test.conf 
@@ -156,23 +156,22 @@ Ouvrez un terminal
  
 Que remarquez-vous de nouveau ?
 
-### Analyse des données de la SNCF 
+## Analyse des données de la SNCF 
 
 Nous allons analyser les données portant sur les retards de la SNCF.
+### Logstash
 
 1. Aller dans le dossier logstash/tp-config
 2. Ouvrir le nouveau fichier de configuration logstash-sncf.conf(Ce fichier contiendra la configuration permettant de lire le fichier regularite-mensuelle-tgv-short.csv placé dans le dossier tp-data)
 3. Lancer logstash avec la nouvelle configuration et analyser le résultat
 ```
-./bin/logstash.bat -f ../tp-config/logstash-sncf.conf
+./bin/logstash.sh -f ../tp-config/logstash-sncf.conf
 ```
 #### Questions
 
 - Décrivez les données ? 
 - Quel est le type des données ? 
 - La date est elle au bon format ? 
-
-
 
 4. Rajouter un filtre qui permettrait de compléter le champ date avec le premier jour du mois et de le convertir en timestamp afin de pouvoir par la suite l'analyser.   
 Le plugin *mutate* permet de modifier la valeur d'un champ. On peut récupérer la valeur du champ avec *%{champ}*
@@ -204,8 +203,8 @@ output {
 }
 ```
 
-## Elasticsearch
-8. Démarrer elasticsearch
+### Elasticsearch
+Démarrer elasticsearch
 - Aller dans le répertoire elasticsearch
 - Lancer le programme elasticsearch
 
@@ -225,7 +224,7 @@ Nous allons maintenant envoyer les données sur elasticsearch
 Après l’ajout des données, vous pouvez les voir via l’url suivante:   
 http://localhost:9200/sncf/_search?pretty   
 
-## Kibana
+### Kibana
 Nous allons démarrer maintenant kibana qui va nous permettre de visualiser les données.
  
 Kibana se compose de plusieurs onglets :
