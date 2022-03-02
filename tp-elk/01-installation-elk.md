@@ -125,11 +125,12 @@ output {
         index => "index-%{+YYYY.MM.dd}"
 }
 
+## Téléchargement et installation
 Télécharger le répertoire zip et dézipper. http://bit.ly/3882oyq 
  
   
 Dans le répertoire tp-config vous trouverez le fichier test.conf avec ce contenu
-A votre avis que signifie ce code ?
+
 
 ```
  input {
@@ -140,79 +141,123 @@ output {
 }
 ```
 
+A votre avis que signifie ce code ?
 
-Ouvrez un terminal (powershell ou git bash )
- 
+Ouvrez un terminal 
+
+## Logstash
 1-   Positionnez vous  dans le répertoire logstash
 2-   Exécutez cette commande ./bin/logstash.bat -f ../tp-config/test.conf 
- 
+
+```
+./bin/logstash.sh -f ../tp-config/test.conf 
+```
   
  
 Que remarquez-vous de nouveau ?
-Tp analyse des retards à la sncf
+
+### Analyse des données de la SNCF 
+
 Nous allons analyser les données portant sur les retards de la SNCF.
-1.	Rendez-vous dans le dossier logstash/tp-config
-2.	Ouvrez le nouveau fichier de configuration logstash-sncf.conf
-Ce fichier contiendra la configuration permettant de lire le fichier regularite-mensuelle-tgv-short.csv placé dans le dossier tp-data
-3.	Lancer logstash avec la nouvelle configuration et analyser le résultat
+
+1. Aller dans le dossier logstash/tp-config
+2. Ouvrir le nouveau fichier de configuration logstash-sncf.conf(Ce fichier contiendra la configuration permettant de lire le fichier regularite-mensuelle-tgv-short.csv placé dans le dossier tp-data)
+3. Lancer logstash avec la nouvelle configuration et analyser le résultat
+```
 ./bin/logstash.bat -f ../tp-config/logstash-sncf.conf
-Problématique : On se rend compte que le fichier de la SNCF comporte une date qui n'est pas complète.
-4.	Rajouter un filtre qui permettrait de compléter le champ date avec le premier jour du mois et de le convertir en timestamp afin de pouvoir par la suite l'analyser.
-Le plugin mutate permet de modifier la valeur d'un champ. On peut récupérer la valeur du champ avec %{champ}
+```
+#### Questions
+
+- Décrivez les données ? 
+- Quel est le type des données ? 
+- La date est elle au bon format ? 
+
+
+
+4. Rajouter un filtre qui permettrait de compléter le champ date avec le premier jour du mois et de le convertir en timestamp afin de pouvoir par la suite l'analyser.   
+Le plugin *mutate* permet de modifier la valeur d'un champ. On peut récupérer la valeur du champ avec *%{champ}*
+
+```
 mutate {
  replace => { "champ" => "valeur" }
 }
+```
  
 La conversion en timestamp s'effectue à l'aide du plugin date.
+```
 date {
  match => [ "champ", "YYYY-MM-dd" ] #On sélectionne le pattern du champ afin d'éviter les erreurs de cast
  timezone => "UTC"
 }
-5.	Caster les valeurs numériques avec logstash pour qu’elasticsearch les prennent en compte
- Maintenant que les résultats correspondent à ce que l'on veut, on souhaite charger les données dans la base elasticsearch.
-6.	Modifiez le fichier d'entrée pour utiliser le fichier regularite-mensuelle-tgv.csv
-7.	Modifiez le fichier de sortie pour utiliser une base elasticsearch
+```
+5. Caster les valeurs numériques avec logstash pour qu’elasticsearch les prennent en compte.   
+ Maintenant que les résultats correspondent à ce que l'on veut (format et type), on souhaite charger les données dans la base elasticsearch.
+ 
+6.	Modifier le fichier d'entrée pour utiliser le fichier regularite-mensuelle-tgv.csv
+7.	Modifier le fichier de sortie pour utiliser une base elasticsearch
+```
 output {
   elasticsearch {
        hosts => [ "localhost" ]
         index => "sncf"
        }
 }
-8.	Démarrer elasticsearch
-Aller dans le répertoire elasticsearch
+```
+
+## Elasticsearch
+8. Démarrer elasticsearch
+- Aller dans le répertoire elasticsearch
+- Lancer le programme elasticsearch
+
+```
+./bin/elasticsearch.sh
+```
+
+ 
+Pour vérifier que elasticsearch est bien démarré, cliquez sur ce lien http://localhost:9200/    
   
+Nous allons maintenant envoyer les données sur elasticsearch 
+
+```
+./bin/logstash.sh -f ../tp-config/logstash-sncf-elastic.conf
+```
  
-Lancer le programme elasticsearch
-Ou Ouvrir un nouveau terminal et saisir ./bin/elasticsearch.bat
- 
-Pour vérifier que elasticsearch est bien démarré, cliquez sur ce lien http://localhost:9200/ 
-  
-Nous allons maintenant envoyer les données sur elasticsearch
-./bin/logstash.bat -f ../tp-config/logstash-sncf-elastic.conf
- 
-Après l’ajout des données, vous pouvez les voir via l’url suivante:
-http://localhost:9200/sncf/_search?pretty
- Kibana
+Après l’ajout des données, vous pouvez les voir via l’url suivante:   
+http://localhost:9200/sncf/_search?pretty   
+
+## Kibana
 Nous allons démarrer maintenant kibana qui va nous permettre de visualiser les données.
  
 Kibana se compose de plusieurs onglets :
--      Discover : Cet onglet permet de faire des recherches via la barre dédiée et de voir les résultats bruts stockés dans la base elasticsearch
- -  	Visualize : Cet onglet permet de réaliser différents types de graphes à partir d'une requête enregistrée ou à partir d'une nouvelle requête
--  	Dashboard : Cet onglet permet de regrouper plusieurs graphes réalisés au préalable dans l'onglet “visualize” sur une même page
+- Discover : Cet onglet permet de faire des recherches via la barre dédiée et de voir les résultats bruts stockés dans la base elasticsearch
+- Visualize : Cet onglet permet de réaliser différents types de graphes à partir d'une requête enregistrée ou à partir d'une nouvelle requête
+- Dashboard : Cet onglet permet de regrouper plusieurs graphes réalisés au préalable dans l'onglet “visualize” sur une même page
  
-Il est possible de restreindre la plage de recherche temporelle à l'aide du bouton à l’extrême droite de la barre de menu. Par défaut, la valeur est de 15 minutes.
- Il est très important de configurer le bon type de données lorsque l'on ajoute des données à une base elasticsearch.
-En effet, les chaînes de caractères sont analysées par la suite mot par mot en coupant les phrases sur les espaces et en enlevant la ponctuation. À chaque mot correspond un pourcentage d'apparition utilisé pour tirer les données selon leur pertinence.
- On retrouve cette analyse dans kibana avec deux champs disponibles sur les champs texte :
-nom_du_champ : Valeur du champ analysé par elasticsearch
-nom_du_champ.raw : Valeur brute du champ (on conserve la phrase entière)
+Il est possible de restreindre la plage de recherche temporelle à l'aide du bouton à l’extrême droite de la barre de menu. Par défaut, la valeur est de 15 minutes.   
+Il est très important de configurer le bon type de données lorsque l'on ajoute des données à une base elasticsearch.    
+En effet, les chaînes de caractères sont analysées par la suite mot par mot en coupant les phrases sur les espaces et en enlevant la ponctuation. À chaque mot correspond un pourcentage d'apparition utilisé pour tirer les données selon leur pertinence.   
+Le moteur de recherche utilisé est **APACHE LUCENE** (https://lucene.apache.org/ , https://fr.wikipedia.org/wiki/Lucene)
+
+On retrouve cette analyse dans kibana avec deux champs disponibles sur les champs texte :   
+- nom_du_champ : Valeur du champ analysé par elasticsearch
+- nom_du_champ.raw : Valeur brute du champ (on conserve la phrase entière)
 Lorsque l'on effectue des graphes, il faut donc faire attention au nom du champ que l'on utilise pour ne pas biaiser les résultats
  
 
-Visualisation
+## Visualisation
 Vous pouvez accéder à Kibana via l’adresse suivante:
-http://localhost:5601/app/kibana#/home?_g=()
-Avant de commencer, il faut configurer l'index qui va être utilisé par la suite
-La première chose à faire est d'aller sélectionner la plage de temps et de sélectionner les 10 dernières années. Que remarquez-vous ? Adapter la période en conséquence.
-Afficher sous la forme d'un camembert les gares de départ où il y a le plus de retard   
-Maintenant, c’est à vous de jouer. Explorer les données en créant une visualisation qui fait parler les données.
+http://localhost:5601/app/kibana#/home?_g=()  
+
+Avant de commencer, il faut configurer l'index qui va être utilisé par la suite.   
+La première chose à faire est d'aller sélectionner la plage de temps et de sélectionner les 10 dernières années.  
+
+### Questions
+
+- Que remarquez-vous ? Adapter la période en conséquence.   
+- Afficher sous la forme d'un camembert les gares de départ où il y a le plus de retard   
+- C’est à vous de jouer. Explorer les données en créant une visualisation qui fait parler les données (storytelling).
+- Explorer l'API de requetage https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started.html
+   Exemple : Menu Dev Tools
+```
+GET /sncf/_search
+```
