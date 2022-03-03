@@ -139,7 +139,7 @@ wget https://r-stat-sc-donnees.github.io/LesMiserables1.txt
 ```
 Créer un très gros fichier 
 ```
-for i in {1..100} do cat LesMiserables1.txt >> BigLesMiserables1.txt done
+for i in {1..100}; do cat LesMiserables1.txt >> BigLesMiserables1.txt; done
 ```
 
 Executer les scripts  sur linux 
