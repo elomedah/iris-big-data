@@ -37,7 +37,7 @@ chmod 0600 ~/.ssh/authorized_keys
 Téléchargement du binaire hadoop
 
 ```
-wget https://downloads.apache.org/hadoop/common/stable/hadoop-3.3.1.tar.gz
+wget https://archive.apache.org/dist/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz
 tar -xzvf hadoop-3.3.1.tar.gz
 ```
 
