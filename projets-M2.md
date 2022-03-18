@@ -4,7 +4,8 @@
 - Documentation sur le projet (comme pour chaque projet, vous devez vous documenter sur le problème à résoudre et savoir si des solutions clés en main sont disponibles) 
 - Autonomie et travail en équipe (votre capacité à résoudre les problèmes que vous aurez tout le long du projet) 
 - Développement Python ( chaque projet comprend une partie d'écriture du code en Python ) 
-- Présentation du produit final 
+- Présentation orale et une démo devrait être préparées
+
 
 # Projet 1 : Analyse de données
 
@@ -14,7 +15,6 @@ En adoptant une démarche orientée Analyse de données vue en cours, vous devez
 - Nettoyer les données
 - Explorer les données
 - Raconter l'histoire des données (storytelling)
-Une présentation orale et une démo devrait être préparées
 
 # Projet 2 : Traitement des données Hadoop MapReduce
 
@@ -27,7 +27,6 @@ Votre programme écrit en Python doit prendre en paramètre deux paramètres sup
 Le résultat devrait être stocker naturellement sur Hadoop Hdfs.    
 
 Vous devez mettre en place également un programme permettant de visualiser les données ainsi traitées de manière interactive.    
-Une présentation orale et une démo devrait être préparées.   
 
 
 # Projet 3 : Traitement de données Spark
@@ -40,7 +39,6 @@ Ce programme doit
 - Pre-agréger les données si nécessaire
 - Stocker le résultat après traitement sur HDFS
 - Mettre en place un programme permettant de visualiser les données traitées
-Une présentation orale et une démo devrait être préparées
 
 # Projet 4 : Traitement de données temps réel
 
@@ -55,7 +53,6 @@ L'utilisation de Kafka sera très apprécié.
 Une fois les données récupérées, vous devez les stocker sur HDFS. 
 
 Le programme doit être écrit en Python. 
-Une présentation orale et une démo devrait être préparées
 
 
 
