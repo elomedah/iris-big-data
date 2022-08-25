@@ -1,7 +1,7 @@
 
 # TP ELK SIEM
 ## Pré requis
-- Installer la machine virtuelle ubuntu ou télécharger la machine ubuntu virtualBox 
+- Installer la machine virtuelle ubuntu ou télécharger la machine ubuntu virtualBox (https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview)
 - Lire la description de la stack ELK
 - Il est possible également de faire le TP sur Windows. Mais pour des raisons des simplicité je préconise fortement l'image ubuntu
 
