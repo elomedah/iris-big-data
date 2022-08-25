@@ -41,6 +41,9 @@ sudo ./elastic-agent install --url=serverElasticHere --enrollment-token=CopierVo
 ```
 
 #### Découvrir les différents dashboard
+Plusieurs dashboard pré-configurés sont déjà disponible. 
+
+![alt text](decouvrir_dashboard_siem.gif "Découvrir les dashboard")
 
 
 
