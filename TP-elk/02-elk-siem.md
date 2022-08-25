@@ -24,6 +24,7 @@ Vous pouvez également utiliser la version cloud de la stack ELK : https://cloud
 ## Collecter les logs en centralisant sur Elasticsearch
 
 ### Collecter les données system
+#### Installer l'agent Elastic
 Pour exporter les logs syslog dans ELK, http://localhost:5601 
 Aller sur le menu Home :  http://localhost:5601/app/home#/
 Choisir l'option Security
@@ -32,9 +33,15 @@ Chercher "System"
 Choisir l'option Install Elastic Agent
 
 ```
+sudo apt install curl
 curl -L -O https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.4.0-linux-x86_64.tar.gz
 tar xzvf elastic-agent-8.4.0-linux-x86_64.tar.gz
 cd elastic-agent-8.4.0-linux-x86_64
-sudo ./elastic-agent install --url=https://2b55bb7397ac4b4487dd7a0903096975.fleet.us-central1.gcp.cloud.es.io:443 --enrollment-token=X19PZDFZSUIzcVczVFFXYTlTUTU6OHJLSzBJLXNUOUtBVVZhR25DVXYtUQ==
+sudo ./elastic-agent install --url=serverElasticHere --enrollment-token=CopierVotreCode
 ```
+
+#### Découvrir les différents dashboard
+
+
+
 
