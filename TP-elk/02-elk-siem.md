@@ -16,10 +16,25 @@ Pour vérifier que Elasticsearch est bien demarré en local : https://localhost:
 ### Installer kibana
 Pour installer ElasticSearch vous pouvez suivre les étapes sur la page officielle d'elasticsearch : https://www.elastic.co/fr/downloads/kibana
 
-Pour vérifier que kibana est bien demarré en local : https://localhost:5601
+Pour vérifier que kibana est bien demarré en local : http://localhost:5601
 
 ### Utiliser la version cloud de ELK 
 Vous pouvez également utiliser la version cloud de la stack ELK : https://cloud.elastic.co/registration 
 
+## Collecter les logs en centralisant sur Elasticsearch
 
+### Collecter les données system
+Pour exporter les logs syslog dans ELK, http://localhost:5601 
+Aller sur le menu Home :  http://localhost:5601/app/home#/
+Choisir l'option Security
+Cliquer sur "Add Integrations" 
+Chercher "System"
+Choisir l'option Install Elastic Agent
+
+```
+curl -L -O https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.4.0-linux-x86_64.tar.gz
+tar xzvf elastic-agent-8.4.0-linux-x86_64.tar.gz
+cd elastic-agent-8.4.0-linux-x86_64
+sudo ./elastic-agent install --url=https://2b55bb7397ac4b4487dd7a0903096975.fleet.us-central1.gcp.cloud.es.io:443 --enrollment-token=X19PZDFZSUIzcVczVFFXYTlTUTU6OHJLSzBJLXNUOUtBVVZhR25DVXYtUQ==
+```
 
