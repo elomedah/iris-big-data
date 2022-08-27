@@ -5,7 +5,7 @@
 - Lire la description de la stack ELK
 - Il est possible également de faire le TP sur Windows. Mais pour des raisons des simplicité je préconise fortement l'image ubuntu
 - Il est possible également d'utiliser la version cloud d'ELK
-- 
+
 ## Installation de ELK
 
 ### Installer ElasticSearch
@@ -56,7 +56,7 @@ Les fichiers logs sont très importants. Il est donc capital de monitorer tout t
 
 ## Configuration des règles
 
-#### Précharger les règles prédefinies de ELK
+#### Charger les règles prédefinies de ELK SIEM
 
 ![alt text](load_rules.gif "Charger les règles prédefinies")
 
