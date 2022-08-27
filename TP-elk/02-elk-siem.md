@@ -23,14 +23,14 @@ Vous pouvez également utiliser la version cloud de la stack ELK : https://cloud
 
 ## Collecter les logs en centralisant sur Elasticsearch
 
-### Collecter les données system
+### Collecter les données du système
 #### Installer l'agent Elastic
-Pour exporter les logs syslog dans ELK, http://localhost:5601 
-Aller sur le menu Home :  http://localhost:5601/app/home#/
-Choisir l'option Security
-Cliquer sur "Add Integrations" 
-Chercher "System"
-Choisir l'option Install Elastic Agent
+Pour exporter les logs syslog dans ELK, http://localhost:5601    
+Aller sur le menu Home :  http://localhost:5601/app/home#/    
+Choisir l'option Security    
+Cliquer sur "Add Integrations"     
+Chercher "System"    
+Choisir l'option Install Elastic Agent    
 
 ```
 sudo apt install curl
@@ -40,11 +40,39 @@ cd elastic-agent-8.4.0-linux-x86_64
 sudo ./elastic-agent install --url=serverElasticHere --enrollment-token=CopierVotreCode
 ```
 
+Pour savoir les composants de l'agent elastic consulter la documentation officielle : https://www.elastic.co/fr/beats/ 
+
 #### Découvrir les différents dashboard
 Plusieurs dashboard pré-configurés sont déjà disponible. 
 
 ![alt text](decouvrir_dashboard_siem.gif "Découvrir les dashboard")
 
 
+#### Ajouter une nouvelle source de données pour collecter les modifications sur les fichiers sensibles
+Les fichiers logs sont très importants. Il est donc capital de monitorer tout type d'action sur ces fichiers sur le serveurs.
 
+![alt text](file-integrity-add-and-deploy-to-agent.gif "Ajouter une source de donnée")
+
+
+## Configuration des règles
+
+#### Précharger les règles prédefinies de ELK
+
+![alt text](load_rules.gif "Charger les règles prédefinies")
+
+#### Créer sa propre règle basée sur une règle prédefinie
+
+
+![alt text](add_rules.gif "Ajouter une règle")
+
+#### Tester la règle
+![alt text](check_rule.gif "Ajouter une règle")
+
+## A vous de jouer
+
+L'exercice de l'atelier qui sera noté consistera à :   
+- chercher une règle prédefinie https://www.elastic.co/guide/en/security/current/detection-engine-overview.html
+- configurer la règle 
+- présenter la règle (MITRE ATT&CK)
+- Tester la violation de la règle pour constater l'alerte
 
