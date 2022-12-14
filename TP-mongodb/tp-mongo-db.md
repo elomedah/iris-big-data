@@ -20,12 +20,23 @@ Documentation officielle d'installation sur Mac https://docs.mongodb.com/manual/
 
 ### Installation et démarrage
 
-##### Installation
+##### Installation sur ubuntu < 22
 Ouvrir le terminal ubuntu en tant qu'administrateur
 
 ```
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 68818C72E52529D4
 sudo echo "deb http://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+```
+
+##### Installation sur ubuntu >= 22
+Ouvrir le terminal ubuntu en tant qu'administrateur
+
+```
+sudo apt-get install gnupg
+wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu $(lsb_release -sc)/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
 sudo apt-get update
 sudo apt-get install -y mongodb-org
 ```
@@ -46,8 +57,14 @@ $ sudo  nohup mongod &
 Pour vérifier que mongo est bien demarré vous pouvez exécuter cette commande.
 La ligne de commande de mongo devrait s'activer.
 
+###### Ubuntu < 22
 ```
 $ mongo
+```
+
+###### Ubuntu >=22
+```
+$ mongosh
 ```
 
 Exécuter cette requête
