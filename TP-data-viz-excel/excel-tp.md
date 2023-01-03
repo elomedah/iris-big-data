@@ -13,6 +13,7 @@ https://github.com/elomedah/iris-big-data/raw/98872a7468f60a0cfb900d7f654b9e6dfd
 
 
 ## Construire un TCD (Tableau croisé dynamique)
+![alt text](tcd.gif "TCD excel")
 
 ## Quelle est la différence entre une dimension et une mesure 
 
