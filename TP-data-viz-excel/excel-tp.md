@@ -9,7 +9,7 @@ https://github.com/elomedah/iris-big-data/raw/98872a7468f60a0cfb900d7f654b9e6dfd
 
 ## Importer un fichier csv dans excel
 
-![alt text](import_csv_excel.gif "Importer fichier csv dans excel")
+![alt text](import_csv_file_excel.gif "Importer fichier csv dans excel")
 
 
 ## Construire un TCD (Tableau croisé dynamique)
