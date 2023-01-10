@@ -214,3 +214,5 @@ $ mongoimport --db my_db_name --collection collectionName --file fileName.json
 7. Trouver les années où des prix nobels n'ont pas été donnés dans des domaines
 8. Afficher le nombre total de lauréat par category
 
+## Mongo compass
+https://www.mongodb.com/docs/compass/current/install/ 
