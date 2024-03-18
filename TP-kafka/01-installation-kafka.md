@@ -12,15 +12,16 @@ La variable $HOME est le répertoire courant de votre utilisateur. Vous pouvez c
 mkdir $HOME/kafka
 cd $HOME/kafka
 ```
-Télécharger Kafka : http://kafka.apache.org/downloads.html  (https://dlcdn.apache.org/kafka/3.0.0/kafka_2.13-3.0.0.tgz)
+Télécharger Kafka : http://kafka.apache.org/downloads.html  (https://downloads.apache.org/kafka/3.7.0/kafka_2.13-3.7.0.tgz)
 ```
-wget https://dlcdn.apache.org/kafka/3.0.0/kafka_2.13-3.0.0.tgz
+wget https://downloads.apache.org/kafka/3.7.0/kafka_2.13-3.7.0.tgz
 ```
 
 Télécharger Java : http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html (optionnel si vous avez déjà java)  
 
 ```
 java -version
+sudo apt-get update
 sudo apt install default-jre
 ```
 
@@ -33,7 +34,7 @@ Copier les fichiers téléchargés dans le repertoire kafka.
 
 Décompresser le fichier kafka télécharger à l'étape 1
 ```
-tar zxvf kafka_2.13-3.0.0.tgz
+tar zxvf kafka_2.13-3.7.0.tgz
 ```
 
 ### Etape 3 : Lancement de zookeeper et kafka
@@ -51,13 +52,13 @@ La version de Kafka que vous avez téléchargée contient déjà Zookeeper et so
 Avant de lancer Zookeeper ouvrez le fichier de configuration ./config/zookeeper.properties avec votre éditeur de texte préferé.
 
 ```
-cd $HOME/kafka/kafka_2.13-3.0.0
+cd $HOME/kafka/kafka_2.13-3.7.0
 vi ./config/zookeeper.properties
 ```
 
 Pour lancer Zookeeper il faut exécuter la commande suivante :
 ```
-cd $HOME/kafka/kafka_2.13-3.0.0
+cd $HOME/kafka/kafka_2.13-3.7.0
 ./bin/zookeeper-server-start.sh ./config/zookeeper.properties
 ```
 
@@ -69,7 +70,7 @@ De même que zookeeper nous devons configurer le fichier le configuration kafka 
 
 ```
 Ouvrir un autre terminal
-cd $HOME/kafka/kafka_2.13-3.0.0
+cd $HOME/kafka/kafka_2.13-3.7.0
 vi config/server.properties
 ```
 
@@ -91,7 +92,7 @@ Pour commencer à envoyer des messages, créons un topic.
 
 ```
 Ouvrir un autre terminal
-cd $HOME/kafka/kafka_2.13-3.0.0
+cd $HOME/kafka/kafka_2.13-3.7.0
 Création de topic
 ./bin/kafka-topics.sh --create  --replication-factor 1 --partitions 1 --topic mon-tunnel-topic --bootstrap-server localhost:9092
 Lister les topics
@@ -104,7 +105,7 @@ Lister les topics
 ```
 ./bin/kafka-console-producer.sh --topic mon-tunnel-topic --bootstrap-server localhost:9092
 ```
-##### Consomateur
+##### Consomateur   (dans un autre terminal)
 
 ```
 ./bin/kafka-console-consumer.sh --topic mon-tunnel-topic --bootstrap-server localhost:9092
