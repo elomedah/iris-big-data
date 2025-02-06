@@ -10,12 +10,18 @@ docker pull apache/kafka:3.9.0
 ```
 Démarrer le container docker kafka
 ```
-docker run -p 9092:9092 apache/kafka:3.9.0
+docker run -p 9092:9092 --name broker apache/kafka:3.9.0
 ```
 Les binaires kafka sont dans le repertoire :
 
 ```
 cd /opt/kafka/bin
+```
+
+Ouvir un terminal dans le container docker kafka
+
+```
+docker exec --workdir /opt/kafka/bin/ -it broker sh
 ```
 
 Si vous utilisez windows vous avez la possibilité d'installer wsl en suivant les instructions sur ce lien
