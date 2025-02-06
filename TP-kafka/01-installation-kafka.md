@@ -59,7 +59,7 @@ Décompresser le fichier kafka télécharger à l'étape 1
 tar zxvf kafka_2.13-3.7.0.tgz
 ```
 
-### Etape 3 : Lancement de zookeeper et kafka 
+### Etape 3 : Lancement de zookeeper et kafka (Optionnel si vous utilisez docker)
 
 Pour lancer Kafka sur votre machine, vous devez avoir deux serveurs :
 
@@ -112,12 +112,14 @@ Grâce aux étapes précedentes notre cluster (à ce stade composé d'un seul br
 ##### Topic
 Pour commencer à envoyer des messages, créons un topic.
 
-```
 Ouvrir un autre terminal
 
 Création de topic
+```
 ./bin/kafka-topics.sh --create  --replication-factor 1 --partitions 1 --topic mon-tunnel-topic --bootstrap-server localhost:9092
+```
 Lister les topics
+```
  ./bin/kafka-topics.sh --list --bootstrap-server localhost:9092
 
 ```
