@@ -21,7 +21,7 @@ cd /opt/kafka/bin
 Ouvir un terminal dans le container docker kafka
 
 ```
-docker exec --workdir /opt/kafka/bin/ -it broker sh
+docker exec --workdir /opt/kafka/ -it broker sh
 ```
 
 Si vous utilisez windows vous avez la possibilité d'installer wsl en suivant les instructions sur ce lien
@@ -52,14 +52,14 @@ Télécharger zookeeper : http://zookeeper.apache.org/releases.html  (optionnel)
 
 Copier les fichiers téléchargés dans le repertoire kafka.
 
-### Etape 2 : Décompresser et vérification java
+### Etape 2 : Décompresser et vérification java (Si vous utilisez docker vous pouvez ignorez cette étape)
 
 Décompresser le fichier kafka télécharger à l'étape 1
 ```
 tar zxvf kafka_2.13-3.7.0.tgz
 ```
 
-### Etape 3 : Lancement de zookeeper et kafka
+### Etape 3 : Lancement de zookeeper et kafka 
 
 Pour lancer Kafka sur votre machine, vous devez avoir deux serveurs :
 
@@ -114,7 +114,7 @@ Pour commencer à envoyer des messages, créons un topic.
 
 ```
 Ouvrir un autre terminal
-cd $HOME/kafka/kafka_2.13-3.7.0
+
 Création de topic
 ./bin/kafka-topics.sh --create  --replication-factor 1 --partitions 1 --topic mon-tunnel-topic --bootstrap-server localhost:9092
 Lister les topics
