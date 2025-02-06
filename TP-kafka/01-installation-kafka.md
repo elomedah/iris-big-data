@@ -12,6 +12,12 @@ Démarrer le container docker kafka
 ```
 docker run -p 9092:9092 apache/kafka:3.9.0
 ```
+Les binaires kafka sont dans le repertoire :
+
+```
+cd /opt/kafka/bin
+```
+
 Si vous utilisez windows vous avez la possibilité d'installer wsl en suivant les instructions sur ce lien
 https://docs.microsoft.com/fr-fr/windows/wsl/install
 ### Etape 1: Télécharger les fichiers (Si vous utilisez docker vous pouvez ignorez cette étape)
