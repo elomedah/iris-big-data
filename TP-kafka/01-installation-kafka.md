@@ -1,10 +1,20 @@
 # Kafka Training
 Ce TP est inspiré du site officiel de kafka (https://kafka.apache.org/quickstart)    
 Dans ce TP, nous allons installer une plateforme Kafka.
-Il est recommandé de faire le tp sur le linux.  
+Il est recommandé de faire le tp sur le linux or docker.
+
+###  Etape 1 : utiliser docker
+Récuperer l'image docker de kafka
+```
+docker pull apache/kafka:3.9.0
+```
+Démarrer le container docker kafka
+```
+docker run -p 9092:9092 apache/kafka:3.9.0
+```
 Si vous utilisez windows vous avez la possibilité d'installer wsl en suivant les instructions sur ce lien
 https://docs.microsoft.com/fr-fr/windows/wsl/install
-### Etape 1: Télécharger les fichiers 
+### Etape 1: Télécharger les fichiers (Si vous utilisez docker vous pouvez ignorez cette étape)
 
 Pour faciliter le TP, créer un répertoire de travail kafka. 
 La variable $HOME est le répertoire courant de votre utilisateur. Vous pouvez créer le repertoire kafka où vous voulez.  
