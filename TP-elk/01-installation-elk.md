@@ -134,7 +134,7 @@ Prenez bien le temps de lire le contenu du fichier docker-compose.yml
 docker-compose up
 ```
   
-Dans le répertoire logstash/pipeline vous trouverez le fichier test.conf avec ce contenu
+Dans le répertoire logstash/tp-config vous trouverez le fichier test.conf avec ce contenu
 
 
 ```
