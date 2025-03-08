@@ -131,7 +131,7 @@ Avec la commande suivante lancer lancer les 3 conteneurs dockers :
 Prenez bien le temps de lire le contenu du fichier docker-compose.yml
 
 ```
-docker-compose -up
+docker-compose up
 ```
   
 Dans le répertoire logstash/pipeline vous trouverez le fichier test.conf avec ce contenu
