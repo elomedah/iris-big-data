@@ -152,16 +152,30 @@ Ouvrez un terminal
 
 ## Logstash
 ### Verification si l'installation fonctionne
-1-   Connectez vous au terminal de logstash
+1- Copier les fichiers de configuration dans le conteneur logstash
+
+```
+docker cp tp-config logstash:/usr/share/logstash/tp-config
+docker cp tp-data logstash:/usr/share/logstash/tp-data
+```
+
+Optionel
+Pour pouvoir modifier les fichiers dans le conteneur
+
+```
+docker exec -u root logstash chown -R logstash:root tp-config
+docker exec -u root logstash chown -R logstash:root tp-data
+```
+2-   Connectez vous au terminal de logstash
 
 ```
 docker exec -it logstash bash
 ```
 
-2-   Exécutez cette commande ./bin/logstash.sh -f ../tp-config/test.conf 
+2-   Exécutez cette commande 
 
 ```
-logstash.sh -f /usr/share/logstash/pipeline/test.conf --path.data test
+logstash -f /usr/share/logstash/tp-config/test.conf --path.data test
 ```
 Que remarquez-vous de nouveau ?
 
@@ -170,12 +184,12 @@ Que remarquez-vous de nouveau ?
 Nous allons analyser les données portant sur les retards de la SNCF.
 ### Logstash
 
-1. Aller dans le dossier /usr/share/logstash/pipeline (ou logstash/pipeline en local)
-2. Ouvrir le nouveau fichier de configuration logstash-sncf-short.conf(Ce fichier contiendra la configuration permettant de lire le fichier regularite-mensuelle-tgv-short.csv placé dans le dossier /usr/share/logstash/data ou logstash/data en local)
+1. Aller dans le dossier /usr/share/logstash/tp-config  (ou tp-config en local)
+2. Ouvrir le nouveau fichier de configuration logstash-sncf-short.conf(Ce fichier contiendra la configuration permettant de lire le fichier regularite-mensuelle-tgv-short.csv placé dans le dossier /usr/share/logstash/tp-data ou tp-data en local)
 3. Lancer logstash avec la nouvelle configuration et analyser le résultat
 
 ```
-logstash.sh -f /usr/share/logstash/pipeline/logstash_short_sncf.conf --path.data sncf-short
+logstash -f /usr/share/logstash/tp-config/logstash_short_sncf.conf --path.data sncf-short
 ```
 #### Questions
 
@@ -200,10 +214,15 @@ date {
 }
 ```
 5. Caster les valeurs numériques avec logstash pour qu’elasticsearch les prennent en compte.   
- Maintenant que les résultats correspondent à ce que l'on veut (format et type), on souhaite charger les données dans la base elasticsearch.
+ Maintenant que les résultats correspondent à ce que l'on veut (format et type), on souhaite charger les données dans la base elasticsearch.   
+
+Vous pouvez consulter le code qui fait les transformations necessaires dans le fichier de configuration logstash_short_sncf_with_filter.conf
+```
+logstash -f /usr/share/logstash/tp-config/logstash_short_sncf_with_filter.conf --path.data sncf-short-filter
+```
  
-6.	Modifier le fichier d'entrée pour utiliser le fichier regularite-mensuelle-tgv.csv
-7.	Modifier le fichier de sortie pour utiliser une base elasticsearch
+7.	Modifier le fichier d'entrée pour utiliser le fichier regularite-mensuelle-tgv.csv
+8.	Modifier le fichier de sortie pour utiliser une base elasticsearch
 ```
 output {
   elasticsearch {
@@ -224,7 +243,7 @@ docker exec -it logstash bash
 ```
 
 ```
-logstash.sh -f /usr/share/logstash/pipeline/logstash-sncf-elastic.conf --path.data sncf
+logstash -f /usr/share/logstash/tp-config/logstash-sncf-elastic.conf --path.data sncf
 ```
  
 Après l’ajout des données, vous pouvez les voir via l’url suivante:   
