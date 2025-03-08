@@ -82,8 +82,7 @@ Il existe de nombreux plugins qui permettent de traiter vos données:
 - détecter du texte en fonction de patterns et parser ce texte
 
 grok permet de créer des expressions régulières permettant de détecter des patterns dans les données et de stocker son contenu dans différents champs.    
-Il est livré avec des patterns prédéfinis comme Syslog ou Apache. Il est bien sûr possible de définir ses propres patterns.
-Pour déboguer:http://grokdebug.herokuapp.com/
+Il est livré avec des patterns prédéfinis comme Syslog ou Apache. Il est bien sûr possible de définir ses propres patterns.   
 Syntaxe
 ```
 filter {
@@ -125,7 +124,7 @@ output {
         index => "index-%{+YYYY.MM.dd}"
 }
 
-## Téléchargement et installation
+## Téléchargement et installation (Manual Windows)
 Télécharger le répertoire zip et dézipper. http://bit.ly/3882oyq 
  
   
