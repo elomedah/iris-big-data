@@ -34,9 +34,9 @@ La variable $HOME est le répertoire courant de votre utilisateur. Vous pouvez c
 mkdir $HOME/kafka
 cd $HOME/kafka
 ```
-Télécharger Kafka : http://kafka.apache.org/downloads.html  (https://downloads.apache.org/kafka/3.7.0/kafka_2.13-3.7.0.tgz)
+Télécharger Kafka : http://kafka.apache.org/downloads.html  (https://dlcdn.apache.org/kafka/4.0.0/kafka_2.13-4.0.0.tgz)
 ```
-wget https://downloads.apache.org/kafka/3.7.0/kafka_2.13-3.7.0.tgz
+wget https://dlcdn.apache.org/kafka/4.0.0/kafka_2.13-4.0.0.tgz
 ```
 
 Télécharger Java : http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html (optionnel si vous avez déjà java)  
@@ -56,7 +56,7 @@ Copier les fichiers téléchargés dans le repertoire kafka.
 
 Décompresser le fichier kafka télécharger à l'étape 1
 ```
-tar zxvf kafka_2.13-3.7.0.tgz
+tar zxvf kafka_2.13-4.0.0.tgz
 ```
 
 ### Etape 3 : Lancement de zookeeper et kafka (Optionnel si vous utilisez docker)
