@@ -183,7 +183,7 @@ Lancer deux consommateurs avec le topic créé précedement
 ```
 Que remarquez-vous ?
 
-### Etape 6 : Ajouter des brokers kafka
+### Etape 6 : Ajouter des brokers kafka (Optionnel)
 
 ##### Plusieurs brokers
 Notre cluster kafka actuel ne contient qu'un seul broker. Nous sommes loin de mettre en place une plateforme tolérente aux pannes. Pour rémedier à ce problème, nous allons ajouter de nouveaux brokers.  
