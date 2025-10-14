@@ -7,7 +7,7 @@ Pour installer hadoop nous avons besoin :
 1. java
 ```
 sudo apt-get update
-sudo apt install openjdk-11-jre-headless
+sudo apt install openjdk-17-jre-headless
 java -version 
 ```
 2. ssh 
@@ -37,8 +37,8 @@ chmod 0600 ~/.ssh/authorized_keys
 Téléchargement du binaire hadoop
 
 ```
-wget https://archive.apache.org/dist/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz
-tar -xzvf hadoop-3.3.1.tar.gz
+wget https://archive.apache.org/dist/hadoop/common/hadoop-3.4.2/hadoop-3.4.2.tar.gz
+tar -xzvf hadoop-3.4.2.tar.gz
 ```
 
 Modifier les variables 
