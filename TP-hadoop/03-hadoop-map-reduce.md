@@ -118,7 +118,7 @@ Copier le fichier local file.txt dans le repertoire input-01
 
 #### Exécuter le job map reduce
 ```
- hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar \
+ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.4.2.jar \
  -files mapper.py,reducer.py   \
  -mapper mapper.py  \
  -reducer reducer.py \
