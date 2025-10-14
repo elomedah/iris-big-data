@@ -1,5 +1,5 @@
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
-export HADOOP_HOME=$HOME/hadoop-3.3.1
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/
+export HADOOP_HOME=$HOME/hadoop-3.4.2
 export HADOOP_INSTALL=$HADOOP_HOME
 export HADOOP_MAPRED_HOME=$HADOOP_HOME
 export HADOOP_COMMON_HOME=$HADOOP_HOME
