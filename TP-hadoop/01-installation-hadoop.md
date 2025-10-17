@@ -70,7 +70,8 @@ Ce fichier sert à configurer l'url du NameNode et le dossier temporaire dans le
 ```
 wget https://raw.githubusercontent.com/elomedah/iris-big-data/master/TP-hadoop/core-site-local.xml
 mv core-site-local.xml $HADOOP_HOME/etc/hadoop/core-site.xml
-mkdir -p /home/iris/tmpdata
+sudo mkdir -p /home/iris/tmpdata
+sudo chmod -R 777 /home/iris/
 ```
 
 ### Configuration  hdfs-site.xml
