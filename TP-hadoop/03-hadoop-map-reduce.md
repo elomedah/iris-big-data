@@ -153,7 +153,7 @@ Notez le temps d'exécution.
 Créer un nouveau repertoire input-02 dans hdfs et copier le fichier BigLesMiserables1.txt dedans
 
 ```
-time  hadoop jar  $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar -Dmapreduce.job.maps=5  -Dmapreduce.job.reduces=5 \
+time  hadoop jar  $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.4.2.jar -Dmapreduce.job.maps=5  -Dmapreduce.job.reduces=5 \
  -files mapper.py,reducer.py   \
  -mapper mapper.py  \
  -reducer reducer.py \
