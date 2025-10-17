@@ -25,8 +25,8 @@ L’option -p est nécessaire si le dossier parent n’existe pas lors de la cr�
 ## Lister le contenu d’un dossier
 
 ```
-Commande : hadoop fs ls <args>
-Exemple : hadoop fs ls /user
+Commande : hadoop fs -ls <args>
+Exemple : hadoop fs -ls /user
 ```
 
 ## Exporter un ou plusieurs fichiers de HDFS au local:
