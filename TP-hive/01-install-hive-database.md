@@ -27,12 +27,22 @@ Pour effectuer ce TP vous devez au préalable :
 * Effectuer les TP sur Hadoop (installation et prise en main)
 * Connaître les bases du requêtage SQL
 
-Hive ne fonctionne pas avec java11 ni java9.
-
-Vous devez donc installer java8
+Verifier votre installation java
 
 ```
-sudo apt install openjdk-8-jdk
+java -version
+```
+
+Verifier que votre installation hadoop est fonctionnel
+
+```
+hadoop fs -ls /
+```
+
+Si hadoop est juste eteint vous pouvez le redemarrer avec la commande suivante
+
+```
+$HADOOP_HOME/sbin/start-all.sh
 ```
 
 ## Installation
@@ -47,13 +57,13 @@ cd tp-hive
 ### Télécharger et decompresser
 
 ```
-wget https://apache.osuosl.org/hive/hive-3.1.2/apache-hive-3.1.2-bin.tar.gz
+wget https://archive.apache.org/dist/hive/hive-4.1.0/apache-hive-4.1.0-bin.tar.gz
 ```
 A la fin du téléchargement, dézipper le fichier et renommer le repertoire hive (pour faciliter l'accès)
 
 ```
-tar -xzf apache-hive-3.1.2-bin.tar.gz 
-mv apache-hive-3.1.2 hive
+tar -xzf apache-hive-4.1.0-bin.tar.gz 
+mv apache-hive-4.1.0-bin hive
 ```
 
 ### Configurer
@@ -311,6 +321,7 @@ hadoop fs -cat /user/hive/warehouse/irisdata.db/etudiant/*
 ```
 
 #### Créer une table à partir d'un fichier
+
 
 
 
