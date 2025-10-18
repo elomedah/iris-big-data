@@ -151,7 +151,7 @@ hive
 Sur la console qui s'affiche avec *hive>* afficher toutes les bases de données
 
 ```
-show databases
+show databases;
 ```
 
 Le résultat devrait ressembler au contenu suivant :
@@ -326,6 +326,7 @@ hadoop fs -cat /user/hive/warehouse/irisdata.db/etudiant/*
 ```
 
 #### Créer une table à partir d'un fichier
+
 
 
 
