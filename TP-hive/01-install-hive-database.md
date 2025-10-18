@@ -84,14 +84,17 @@ Télécharger le fichier de configurer hive-site.xml et déplacer le dans le dos
 ```
 wget https://raw.githubusercontent.com/elomedah/iris-big-data/master/TP-hive/hive-site.xml
 
+mv hive-site.xml $HOME/hive/conf
+```
+
 Remplacer les variables :
-1. ${system:java.io.tmpdir par /tmp/hive
+1. ${system:java.io.tmpdir} par /tmp/hive
 2. ${system:user.name} par l'utilisateur iris
 
-sed -i 's/\${system:java.io.tmpdir}/\/tmp\/hive/g' /home/iris/tp-hive/hive/conf/hive-site.xml
-sed -i 's/\${system:user.name}/iris/g' /home/iris/tp-hive/hive/conf/hive-site.xml
+```
+sed -i 's/\${system:java.io.tmpdir}/\/tmp\/hive/g' $HOME/hive/conf/hive-site.xml
+sed -i 's/\${system:user.name}/iris/g' $HOME/hive/conf/hive-site.xml
 
-mv hive-site.xml $HOME/hive/conf
 ```
 
 #### Préparation stockage sur hadoop hdfs
@@ -323,6 +326,7 @@ hadoop fs -cat /user/hive/warehouse/irisdata.db/etudiant/*
 ```
 
 #### Créer une table à partir d'un fichier
+
 
 
 
