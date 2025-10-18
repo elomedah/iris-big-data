@@ -129,9 +129,10 @@ Vérifier la version hive
 
 ```
 $HIVE_HOME/bin/hive --version
-
+```
 ou simplement
 
+```
 hive --version
 ```
 
@@ -322,6 +323,7 @@ hadoop fs -cat /user/hive/warehouse/irisdata.db/etudiant/*
 ```
 
 #### Créer une table à partir d'un fichier
+
 
 
 
