@@ -71,14 +71,15 @@ mv apache-hive-4.1.0-bin hive
 #### Variable et fichier de conf
 Les variables d'environnement hive
 Télécharger ce fichier https://raw.githubusercontent.com/elomedah/iris-big-data/master/TP-hive/hive-bash-var.sh et ajouter son contenu dans le fichier .bashrc   
-Ce fichier contient une variable HIVE_HOME positionner par défaut sur /home/iris/tp-hive/hive
+Ce fichier contient une variable HIVE_HOME positionner par défaut sur $HOME/hive
 
 ```
 wget https://raw.githubusercontent.com/elomedah/iris-big-data/master/TP-hive/hive-bash-var.sh
 cat hive-bash-var.sh >> ~/.bashrc
+source ~/.bashrc
 ```
 
-Télécharger le fichier de configurer hive-site.xml et déplacer le dans le dossier /home/iris/tp-hive/hive/conf
+Télécharger le fichier de configurer hive-site.xml et déplacer le dans le dossier $HOME/hive/conf
 
 ```
 wget https://raw.githubusercontent.com/elomedah/iris-big-data/master/TP-hive/hive-site.xml
@@ -90,11 +91,11 @@ Remplacer les variables :
 sed -i 's/\${system:java.io.tmpdir}/\/tmp\/hive/g' /home/iris/tp-hive/hive/conf/hive-site.xml
 sed -i 's/\${system:user.name}/iris/g' /home/iris/tp-hive/hive/conf/hive-site.xml
 
-mv hive-site.xml /home/iris/tp-hive/hive/conf
+mv hive-site.xml $HOME/hive/conf
 ```
 
 #### Préparation stockage sur hadoop hdfs
-Créer le repertoire /user/hive/warehouse dans hdfs. Ce repertoire est sera le repertoire du datawarehouse
+Créer le repertoire /user/hive/warehouse dans hdfs. Ce repertoire sera le repertoire du datawarehouse
 
 ```
 hadoop fs -mkdir -p /user/hive/warehouse
@@ -103,7 +104,7 @@ hadoop fs -mkdir -p /user/hive/warehouse
 Créer le repertoire temporaire tmp.
 
 ```
-hadoop dfs -mkdir -p /user/tmp
+hadoop fs -mkdir -p /user/tmp
 ```
 
 Nous devons autoriser hive à écrire dans les répertoires que nous venons de créer
@@ -321,6 +322,7 @@ hadoop fs -cat /user/hive/warehouse/irisdata.db/etudiant/*
 ```
 
 #### Créer une table à partir d'un fichier
+
 
 
 
