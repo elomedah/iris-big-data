@@ -82,9 +82,8 @@ source ~/.bashrc
 Télécharger le fichier de configurer hive-site.xml et déplacer le dans le dossier $HOME/hive/conf
 
 ```
-wget https://raw.githubusercontent.com/elomedah/iris-big-data/master/TP-hive/hive-site.xml
+cp $HIVE_HOME/conf/hive-default.xml.template $HOME/hive/conf/hive-site.xml
 
-mv hive-site.xml $HOME/hive/conf
 ```
 
 Remplacer les variables :
@@ -139,11 +138,6 @@ ou simplement
 hive --version
 ```
 
-```
-hive --service metastore &
-hive --service hiveserver2 &
-
-```
 La version affichée devrait être 4.2.1
 
 ### Console Hive CLI, Configuration beeline 
@@ -172,10 +166,9 @@ Il existe plusieurs limitations de Hive CLI, par conséquent, dans la nouvelle v
 
 Hive beeline peut être exécuté en mode intégré, ce qui est un moyen rapide d'exécuter certaines requêtes HiveQL, ceci est similaire à Hive CLI (ancienne version).
 
-Utilisateur : *iris*
-Mot de passe : *iris* 
+Utilisateur : votre user
 ```
-beeline -u jdbc:hive2:// -n iris -p iris
+beeline -u jdbc:hive2:// -n iris 
 ```
 Sur la console qui s'affiche avec *hive>* afficher toutes les bases de données
 Afficher les databases 
@@ -203,7 +196,9 @@ Pour plus de détail : https://cwiki.apache.org/confluence/display/hive/setting+
 
 ```
 $HIVE_HOME/bin/hiveserver2
+```
 ou
+```
 $HIVE_HOME/bin/hive --service hiveserver2
 ```
 Vous pouvez maintenant vous connecter à Hive à partir d'un serveur distant à l'aide de Beeline ou à partir d'applications Java, Scala, Python ou dbeaver à l'aide de la chaîne de connexion Hive JDBC
@@ -223,7 +218,7 @@ Connecting to jdbc:hive2://127.0.0.1:10000
 Connected to: Apache Hive (version 3.1.2)
 Driver: Hive JDBC (version 3.1.2)
 Transaction isolation: TRANSACTION_REPEATABLE_READ
-Beeline version 3.1.2 by Apache Hive
+Beeline version 4.1.0 by Apache Hive
 0: jdbc:hive2://127.0.0.1:10000>
 ```
 
@@ -233,9 +228,10 @@ Beeline version 3.1.2 by Apache Hive
 
 ```
 CREATE DATABASE IF NOT EXISTS irisdata;
-
+```
 or
 
+```
 CREATE SCHEMA irisdata;
 
 ```
@@ -277,13 +273,13 @@ Nous allons créer les tables sur la base default
 Afficher les tables
 
 ```
-show tables
+show tables;
 ```
 
 #### Insérer les données
 
 ```
- INSERT INTO TABLE etudiant (nom, prenom, universite, age, note) 
+ INSERT INTO TABLE etudiant (nom, prenom, universite, age) 
  values ('Anna', 'Simons','Iris Paris', 18), 
  ('Simo', 'Abel','Iris Reims', 20),
  ('Zemm', 'Patric','Iris Lyon', 18);
@@ -331,6 +327,7 @@ hadoop fs -cat /user/hive/warehouse/irisdata.db/etudiant/*
 ```
 
 #### Créer une table à partir d'un fichier
+
 
 
 
