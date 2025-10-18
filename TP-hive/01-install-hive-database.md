@@ -139,7 +139,12 @@ ou simplement
 hive --version
 ```
 
-La version affichée devrait être 3.2.1
+```
+hive --service metastore &
+hive --service hiveserver2 &
+
+```
+La version affichée devrait être 4.2.1
 
 ### Console Hive CLI, Configuration beeline 
 
@@ -326,6 +331,7 @@ hadoop fs -cat /user/hive/warehouse/irisdata.db/etudiant/*
 ```
 
 #### Créer une table à partir d'un fichier
+
 
 
 
