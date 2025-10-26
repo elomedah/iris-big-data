@@ -1,3 +1,4 @@
+# TP HIVE FOR DOCKER (QUICKSTART)
 ```
 docker run apache/hive:standalone-metastore-4.1.0
 ```
@@ -5,12 +6,12 @@ Note: Additional parameters might be required. See full image description below 
 
 Apache Hive docker images.
 
-Apache Hive
+## Apache Hive
 Apache Hive™ is a popular open-source data warehousing framework that allows users to query large datasets stored in distributed storage systems like Hadoop HDFS, Apache Ozone, Amazon S3, or Microsoft Azure Data Lake Storage (ADLS). It provides a SQL-like (called HiveQL) interface to query, analyze, and manage structured and semi-structured data.
 
 With Hive, users can define tables and schemas, write queries in a familiar SQL-like language and perform various data analysis tasks such as filtering, aggregating, and joining data. Hive supports many popular data formats including CSV, JSON, Avro, ORC, and Parquet.
 
-Quickstart
+## Quickstart
 
 ```
 export HIVE_VERSION=4.1.0
@@ -32,9 +33,12 @@ docker run -d -p 9083:9083 --env SERVICE_NAME=metastore --name metastore-standal
 Warning! Everything would be lost when the service is down! In order to save the Hive table's schema and data, start the container with an external Postgres and Volume to keep them.
 
 
-Usage
+## Usage
 Accessing Beeline:
- docker exec -it hive4 beeline -u 'jdbc:hive2://localhost:10000/'
+```
+docker exec -it hive4 beeline -u 'jdbc:hive2://localhost:10000/'
+```
+
 You can use beeline as it is installed on your host machine beeline -u 'jdbc:hive2://localhost:10000/'
 
 Accessing HiveServer2 Web UI:
