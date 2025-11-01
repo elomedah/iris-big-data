@@ -13,14 +13,6 @@ This is lightweight and for a quick setup, it uses Derby as metastore db.
 docker run -d -p 10000:10000 -p 10002:10002 --env SERVICE_NAME=hiveserver2 --name hive4 apache/hive:4.1.0
 ```
 
-Launch Standalone Metastore
-For a quick start, launch the Metastore with Derby,
-
-```
-docker run -d -p 9083:9083 --env SERVICE_NAME=metastore --name metastore-standalone apache/hive:4.1.0
-```
-Warning! Everything would be lost when the service is down! In order to save the Hive table's schema and data, start the container with an external Postgres and Volume to keep them.
-
 
 ## Usage
 Accessing Beeline:
