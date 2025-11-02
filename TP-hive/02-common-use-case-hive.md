@@ -105,3 +105,68 @@ Afficher le contenu des fichiers
 hadoop fs -cat /opt/hive/data/warehouse/employees/*
 ```
 
+### Table externe vs Table Interne
+
+1. Table Interne (Managed Table)
+
+- Hive gère complètement les données et les métadonnées
+- Lors du DROP TABLE, les données sont supprimées du HDFS
+- Les données sont stockées dans le warehouse Hive par défaut
+- Hive a le contrôle total du cycle de vie des données
+
+2. Table Externe (External Table)
+
+- Hive gère uniquement les métadonnées
+- Lors du DROP TABLE, seules les métadonnées sont supprimées, les données restent dans HDFS
+- Les données peuvent être dans n'importe quel répertoire HDFS
+- Utilisée quand les données sont partagées entre plusieurs systèmes
+
+La table précedente qu'on a créé est une table interne. En supprimant la table vous verez que les données aussi seront supprimées.   
+
+Faire une sauvegarde du repertoire /opt/hive/data/warehouse/employees
+```
+hadoop fs -mkdir -p /opt/hive/data/warehouse/external
+hadoop fs -cp -p /opt/hive/data/warehouse/employees /opt/hive/data/warehouse/external
+```
+
+Supprimer la table employees
+```
+DROP TABLE employees;
+```
+Vous remarquerez que le repertoire /opt/hive/data/warehouse/employees a été aussi supprimé
+```
+hadoop fs -ls -p /opt/hive/data/warehouse/
+```
+
+Créons de nouveau la table employees comme une table EXTERNE.
+
+```
+CREATE EXTERNAL TABLE employees (
+    emp_id INT,
+    emp_name STRING,
+    department STRING,
+    salary DOUBLE,
+    emails ARRAY<STRING>,
+    preferences MAP<STRING, STRING>
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '|'
+COLLECTION ITEMS TERMINATED BY ','
+MAP KEYS TERMINATED BY ':'
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE
+LOCATION '/opt/hive/data/warehouse/external/employees/';
+```
+
+Faire un select pour vérifier que la table a été bien créée
+
+```
+SELECT * FROM employees
+SHOW CREATE TABLE employees
+```
+
+Supprimer la nouvelle table employees.
+Que remarquez vous ? 
+
+
+
