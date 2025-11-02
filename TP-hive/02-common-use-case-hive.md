@@ -44,14 +44,55 @@ CREATE TABLE employees (
     emp_name STRING,
     department STRING,
     salary DOUBLE,
-    emails ARRAY<STRING>,           -- Liste d'emails
-    preferences MAP<STRING, STRING> -- Clé-valeur
+    emails ARRAY<STRING>,
+    preferences MAP<STRING, STRING>
 )
 ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '|'
+COLLECTION ITEMS TERMINATED BY ','
+MAP KEYS TERMINATED BY ':'
 LINES TERMINATED BY '\n'
-FIELDS TERMINATED BY '|'           -- Colonnes séparées par |
-COLLECTION ITEMS TERMINATED BY ',' -- Emails séparés par ,
-MAP KEYS TERMINATED BY ':';        -- Clé:valeur avec :
 STORED AS TEXTFILE;
 ```
+
+Insert des données dans la table employees
+
+```
+INSERT INTO TABLE employees VALUES 
+(1, 'Alice Dupont', 'Engineering', 75000.50, 
+ array('alice@company.com', 'alice.d@work.com'), 
+ map('theme', 'dark', 'lang', 'fr', 'notifications', 'on')),
+ 
+(2, 'Bob Martin', 'Sales', 65000.00, 
+ array('bob@company.com'), 
+ map('theme', 'light', 'lang', 'en')),
+ 
+(3, 'Carol Smith', 'Marketing', 70000.75, 
+ array('carol@company.com', 'c.smith@personal.com', 'carol.s@work.com'), 
+ map('lang', 'es', 'theme', 'dark')),
+ 
+(4, 'David Lee', 'Engineering', 80000.00, 
+ array('david@company.com'), 
+ map('notifications', 'off', 'lang', 'en')),
+ 
+(5, 'Emma Wilson', 'HR', 68000.25, 
+ array('emma@company.com', 'e.wilson@work.com'), 
+ map('theme', 'light', 'lang', 'fr', 'timezone', 'CET'));
+```
+
+#### Description de la table
+
+Pour voir l'ensemble des paramètres utilisés pour créer la table 
+
+```
+SHOW CREATE TABLE employees; 
+```
+
+Vous remarquerez que les données sont stockées /opt/hive/data/warehouse/employees
+
+Sur un autre terminal connectez-vous au terminal sh
+```
+
+```
+
 
