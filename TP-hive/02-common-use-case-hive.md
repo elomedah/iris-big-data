@@ -168,5 +168,27 @@ SHOW CREATE TABLE employees
 Supprimer la nouvelle table employees.
 Que remarquez vous ? 
 
+#### Table externe sur des données existantes   
 
+Télecharger le fichier data-01-employees.csv
+
+```
+wget https://raw.githubusercontent.com/elomedah/iris-big-data/refs/heads/master/TP-hive/data-01-employees.csv
+```
+Déplacer le fichier dans le repertoire /opt/hive/data/warehouse/external/employees/   
+Créer de nouveau la table employees    
+
+Faites des rêquetes simples 
+
+```
+SELECT count(*) FROM employees;
+```
+
+Que remarquez vous ?
+
+### A vous de jouer !
+
+- Partionning
+- Stored As
+- LOAD DATA INPATH
 
