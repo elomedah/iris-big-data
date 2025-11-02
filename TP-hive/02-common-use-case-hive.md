@@ -92,7 +92,16 @@ Vous remarquerez que les données sont stockées /opt/hive/data/warehouse/employ
 
 Sur un autre terminal connectez-vous au terminal sh
 ```
-
+docker exec -it hive4 sh
 ```
 
+```
+hadoop fs -ls /opt/hive/data/warehouse/employees
+```
+
+Afficher le contenu des fichiers 
+
+```
+hadoop fs -cat /opt/hive/data/warehouse/employees/*
+```
 
