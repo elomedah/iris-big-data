@@ -6,6 +6,11 @@ L'objectif de ce TP est d'executer un job map reduce sur votre cluster local Had
 ### Pré requis
 
 * Faire le TP 1 Hadoop (Installer hadoop)
+Si le TP 1 est déjà fait il faut simplement demarrer les composants hdfs et yarn
+
+```
+$HADOOP_HOME/sbin/start-all.sh
+```
 
 
 ### Hadoop streaming
