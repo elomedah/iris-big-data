@@ -135,7 +135,7 @@ DROP TABLE employees;
 ```
 Vous remarquerez que le repertoire /opt/hive/data/warehouse/employees a été aussi supprimé
 ```
-hadoop fs -ls -p /opt/hive/data/warehouse/
+hadoop fs -ls /opt/hive/data/warehouse/
 ```
 
 Créons de nouveau la table employees comme une table EXTERNE.
