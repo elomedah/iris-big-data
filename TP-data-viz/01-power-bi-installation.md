@@ -1,7 +1,13 @@
 # Procédure d'Installation de Power BI Desktop 
 
-N.B En cas de difficultés lors de l’installation, contactez-moi avant le jour du cours.
-Vous devez avoir au moins 2Go d'espace disponible sur votre système d'exploitation Windows.
+N.B En cas de difficultés lors de l’installation, contactez-moi avant le jour du cours.   
+Vous devez avoir au moins 2Go d'espace disponible sur votre système d'exploitation Windows.   
+
+## Pré-requis
+Power BI étant un produit Microsoft, il doit être installé sur un système Windows.
+Les étudiants disposant déjà d’un ordinateur Windows peuvent l’installer directement sur leur système.
+
+Toutefois, je recommande à tous les étudiants, quel que soit leur système d’exploitation (Windows, Linux, Mac), d’installer une machine virtuelle Windows et d’y procéder à l’installation de Power BI.   
 
 ## Méthode 1 : Passer par le Microsoft Store 
 Cette méthode est idéale si vous n'avez pas de restrictions d'accès au Microsoft Store. 
