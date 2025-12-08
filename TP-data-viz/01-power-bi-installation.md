@@ -11,11 +11,11 @@ https://www.microsoft.com/fr-fr/power-platform/products/power-bi/desktop
 
 ### 2. Cliquer sur Téléchargement
 
-<img width="2260" height="748" alt="image" src="https://github.com/user-attachments/assets/726f14db-12c0-48a3-8849-f8ee7da8f716" />
+<img width="1500" height="400" alt="image" src="https://github.com/user-attachments/assets/726f14db-12c0-48a3-8849-f8ee7da8f716" />
 
 ### 3. Cliquer sur Obtenir (Get)
 
-<img width="1862" height="1370" alt="image" src="https://github.com/user-attachments/assets/202ebe85-cd29-42c1-82d1-9442afe03ce6" />
+<img width="1000" height="800" alt="image" src="https://github.com/user-attachments/assets/202ebe85-cd29-42c1-82d1-9442afe03ce6" />
 
 ### 4. Suivre les étapes d'installation usuelles.    
 Une fois l'installation terminée, vous devriez être en mesure d'ouvrir l'application Power Bi   
