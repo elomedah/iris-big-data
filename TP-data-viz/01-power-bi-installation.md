@@ -18,6 +18,11 @@ Une fois l'installation terminée, vous devriez être en mesure d'ouvrir l'appli
 
 <img width="478" height="513" alt="image" src="https://github.com/user-attachments/assets/dfb0d01c-fc0b-4063-8f31-cb7c72c870a7" />
 
+### 5. Ouvrir l'application et commencer à jouer 
+Vous pourriez suivre le tutotiel *Getting Started*
+<img width="1135" height="782" alt="image" src="https://github.com/user-attachments/assets/09c6bf7d-862d-4116-a2fc-0727314c91e3" />
+
+
 ## Méthode 2 : Téléchargement Direct 
 Si tu es bloqué par le Microsoft Store ou si tu préfères télécharger le fichier d'installation 
 directement, suis ces étapes : 
