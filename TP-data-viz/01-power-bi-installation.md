@@ -29,8 +29,6 @@ Vous pourriez suivre le tutotiel *Getting Started*
 
 ## Méthode 2 : Téléchargement Direct (Uniquement si vous ne pouvez pas installer via le microsoft store)
 
-Si vous ne pouvez pas installer via le microsoft Store 
-directement, suis ces étapes : 
 ### 1. Accéder au site de Power BI et cliquer sur le bouton Télécharger https://www.microsoft.com/fr-fr/download/details.aspx?id=58494&culture=fr-fr&country=fr
 
 Selon votre système d'exploitation vous devriez télécharger le bon fichier. En général vous aurez un système 64 bits.
@@ -39,7 +37,7 @@ Selon votre système d'exploitation vous devriez télécharger le bon fichier. E
  
 ### 2. Lancer l'installation et suivre les étapes d'installation usuelles.
 
-Si vous n'avez pas les droits d'administration sur votre ordinateur, il est fortement recommandé si vous pouvez installation une machine virtuelle Windows, d'installer cette dernière et suivre la première partie d'installation.
+Si vous n'avez pas les droits d'administration sur votre ordinateur, il est fortement recommandé si vous pouvez installer une machine virtuelle Windows, d'installer cette dernière et suivre la première partie d'installation.
 <img width="491" height="387" alt="image" src="https://github.com/user-attachments/assets/42ae7848-e81a-4d05-b545-6bc36780a6d7" />
 
 ### 3. Ouvrir l'application et commencer à jouer 
