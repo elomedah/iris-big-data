@@ -4,15 +4,18 @@ Cette méthode est idéale si vous êtes administrateurs et sans restrictions d'
 1. Accéder au site de téléchargement de Power BI : https://www.microsoft.com/fr-fr/power-platform/products/power-bi/desktop   
 
 2. Cliquer sur Téléchargement
+
 <img width="2260" height="748" alt="image" src="https://github.com/user-attachments/assets/726f14db-12c0-48a3-8849-f8ee7da8f716" />
 
-3. Cliquer sur Obtenir (Get)
+4. Cliquer sur Obtenir (Get)
 
 <img width="1862" height="1370" alt="image" src="https://github.com/user-attachments/assets/202ebe85-cd29-42c1-82d1-9442afe03ce6" />
 
-4. Suivre les étapes d'installation usuelles
-   
-Méthode 2 : Téléchargement Direct 
+4. Suivre les étapes d'installation usuelles. 
+Une fois l'installation terminée, vous devriez être en mesure d'ouvrir l'application Power Bi
+<img width="478" height="513" alt="image" src="https://github.com/user-attachments/assets/dfb0d01c-fc0b-4063-8f31-cb7c72c870a7" />
+
+## Méthode 2 : Téléchargement Direct 
 Si tu es bloqué par le Microsoft Store ou si tu préfères télécharger le fichier d'installation 
 directement, suis ces étapes : 
 1. Accéder au site de Power BI 
