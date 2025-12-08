@@ -1,6 +1,10 @@
 # Procédure d'Installation de Power BI Desktop 
+
+N.B En cas de difficultés lors de l’installation, contactez-moi avant le jour du cours.
+Vous devez avoir au moins 2Go d'espace disponible sur votre système d'exploitation Windows.
+
 ## Méthode 1 : Passer par le Microsoft Store 
-Cette méthode est idéale si vous êtes administrateurs et sans restrictions d'accès au Store. 
+Cette méthode est idéale si vous n'avez pas de restrictions d'accès au Microsoft Store. 
 ### 1. Accéder au site de téléchargement de Power BI 
 
 https://www.microsoft.com/fr-fr/power-platform/products/power-bi/desktop   
@@ -23,34 +27,21 @@ Vous pourriez suivre le tutotiel *Getting Started*
 <img width="1135" height="782" alt="image" src="https://github.com/user-attachments/assets/09c6bf7d-862d-4116-a2fc-0727314c91e3" />
 
 
-## Méthode 2 : Téléchargement Direct 
-Si tu es bloqué par le Microsoft Store ou si tu préfères télécharger le fichier d'installation 
+## Méthode 2 : Téléchargement Direct (Uniquement si vous ne pouvez pas installer via le microsoft store)
+
+Si vous ne pouvez pas installer via le microsoft Store 
 directement, suis ces étapes : 
-1. Accéder au site de Power BI 
-o Va sur le site de Microsoft Power BI. 
-2. Sélectionner la langue 
-o Choisis la langue souhaitée pour le téléchargement 
-3. Télécharger l'application 
-o Clique sur le bouton Télécharger. 
-4. Choisir le bon fichier 
-o Tu auras le choix entre deux fichiers choisi  le fichier x64 (64 bits)  
-o Pour savoir quel fichier choisir, suis ces étapes : 
-▪ Ouvre le menu Démarrer. 
-▪ Tape "À propos" dans la barre de recherche et accède aux 
-informations de ton PC. 
-▪ Vérifie le type de système d'exploitation (64 bits ou 32 bits). 
-▪ Choisis le fichier correspondant à ton système (x64 pour 64 bits, 
-x86 pour 32 bits). 
-Installation de Power BI Desktop 
-Une fois que tu as téléchargé le fichier d'installation approprié, suis ces étapes : 
-1. Lancer le guide d'installation 
-o Double-clique sur le fichier téléchargé pour démarrer l'installation. 
-2. Suivre les instructions à l'écran 
-o Lis et accepte les termes de la licence. 
-o Choisis si tu veux créer un raccourci sur le bureau. 
-3. Installer l'application 
-o Clique sur Installer pour commencer l'installation. 
-4. Finaliser l'installation 
-o Une fois l'installation terminée, Power BI Desktop sera prêt à l'emploi. Tu 
-pourras explorer ses fonctionnalités et commencer à travailler sur tes 
-projets. 
+### 1. Accéder au site de Power BI et cliquer sur le bouton Télécharger https://www.microsoft.com/fr-fr/download/details.aspx?id=58494&culture=fr-fr&country=fr
+
+Selon votre système d'exploitation vous devriez télécharger le bon fichier. En général vous aurez un système 64 bits.
+
+<img width="1656" height="1195" alt="image" src="https://github.com/user-attachments/assets/769aab1e-7cba-4833-98b6-68e5276a477c" />
+ 
+### 2. Lancer l'installation et suivre les étapes d'installation usuelles.
+
+Si vous n'avez pas les droits d'administration sur votre ordinateur, il est fortement recommandé si vous pouvez installation une machine virtuelle Windows, d'installer cette dernière et suivre la première partie d'installation.
+<img width="491" height="387" alt="image" src="https://github.com/user-attachments/assets/42ae7848-e81a-4d05-b545-6bc36780a6d7" />
+
+### 3. Ouvrir l'application et commencer à jouer 
+Vous pourriez suivre le tutotiel *Getting Started*
+<img width="1135" height="782" alt="image" src="https://github.com/user-attachments/assets/09c6bf7d-862d-4116-a2fc-0727314c91e3" />
