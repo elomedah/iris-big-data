@@ -40,4 +40,7 @@ pip install pyspark==3.5.1
 ```
 
 
+## Lancer spark
+
+Lancer le main depuis PyCharm.
 
