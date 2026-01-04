@@ -44,3 +44,6 @@ pip install pyspark==3.5.1
 
 Lancer le main depuis PyCharm.
 
+<img width="2539" height="1281" alt="image" src="https://github.com/user-attachments/assets/f8aecd32-1a70-4c89-8206-191bfae6b4ab" />
+
+
