@@ -12,10 +12,10 @@
  
 ## Installation de pyspark
 
-Cloner le projet sample pyspark :
-
+Cloner le projet  spark-kata via git ou directement depuis pycharm :
 
 ```
+git clone https://github.com/elomedah/spark-kata.git
 ```
 
 Sur une ligne de commande creer une virtual env 
@@ -28,10 +28,16 @@ Activer la virtual env .venv
 ```
 source .venv/bin/activate 
 ```
+ou sur windows 
+
+```
+.venv\\Scripts\\activate
+```
 
 Installer pyspark 3.5.1
 ```
 pip install pyspark==3.5.1
 ```
+
 
 
