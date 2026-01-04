@@ -2,7 +2,7 @@
 ## Environnement local de développement Spark
 
 - IDE : Pycharm https://www.jetbrains.com/pycharm/download/?section=windows
-- Pour ceux qui ont windows, mettre la variable d'environnement HADOOP_HOME après avoir télécharger les winutils sur ce repository : https://github.com/steveloughran/winutils. Dezipper le contenu dans le répetoire par exemple C:/hadoop/
+- Pour ceux qui ont windows, mettre la variable d'environnement HADOOP_HOME après avoir télécharger les winutils sur ce repository : https://github.com/steveloughran/winutils. Déezipper le contenu dans le répetoire par exemple C:/hadoop/
 - Utiliser Java 8 ou 11
 - Télécharger la version 3.10 de python : https://www.python.org/downloads/release/python-3100/ 
 - Vérifier que les variables d'environnement suivantes sont bien configurées :
@@ -33,4 +33,5 @@ Installer pyspark 3.5.1
 ```
 pip install pyspark==3.5.1
 ```
+
 
