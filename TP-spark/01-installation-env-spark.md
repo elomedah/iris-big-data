@@ -3,7 +3,7 @@
 
 - IDE : Pycharm https://www.jetbrains.com/pycharm/download/?section=windows
 - Pour ceux qui ont windows, mettre la variable d'environnement HADOOP_HOME après avoir télécharger les winutils sur ce repository : https://github.com/steveloughran/winutils. Déezipper le contenu dans le répetoire par exemple C:/hadoop/
-- Utiliser Java 8 ou 11
+- Utiliser Java 8 ou 11 : https://www.openlogic.com/openjdk-downloads 
 - Télécharger la version 3.10 de python : https://www.python.org/downloads/release/python-3100/ 
 - Vérifier que les variables d'environnement suivantes sont bien configurées :
    - JAVA_HOME=Your_java_path_here
@@ -45,5 +45,6 @@ pip install pyspark==3.5.1
 Lancer le main depuis PyCharm.
 
 <img width="2539" height="1281" alt="image" src="https://github.com/user-attachments/assets/f8aecd32-1a70-4c89-8206-191bfae6b4ab" />
+
 
 
