@@ -12,7 +12,21 @@ Ce projet permet de pratiquer :
 - Les fonctions
 - La Programmation Orientée Objet (POO)
 
----
+##  Utilisation obligatoire du gestionnaire de version (Git)
+
+Ce projet doit être réalisé en utilisant un gestionnaire de version :
+
+- GitHub
+- GitLab
+- Bitbucket
+
+### Règles obligatoires
+
+1. Le projet doit être hébergé sur un dépôt distant.
+2. Les étudiants doivent effectuer des **commits réguliers** tout au long du développement.
+3. Chaque commit doit avoir un message clair et explicite.
+4. Le dépôt ne doit pas contenir un seul commit final.
+
 
 ## Fonctionnalités attendues
 
