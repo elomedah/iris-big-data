@@ -49,4 +49,9 @@ Créer les classes suivantes :
 - rechercher un livre
 - afficher les livres
 
----
+Vous allez créer un système de gestion d’une bibliothèque qui contient **plusieurs types de livres** :
+
+- Livre classique
+- Livre audio
+- Bande dessinée
+- Ebook
