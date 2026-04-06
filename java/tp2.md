@@ -374,23 +374,6 @@ On souhaite écrire un programme qui :
 - vérifie si le total dépasse 100 ;
 - affiche les résultats.
 
-### Programme corrigé
-
-```java
-public class Achat {
-    public static void main(String[] args) {
-        double prixUnitaire = 24.5;
-        int quantite = 5;
-        double total = prixUnitaire * quantite;
-        boolean remise = total > 100;
-
-        System.out.println("Prix unitaire : " + prixUnitaire);
-        System.out.println("Quantite : " + quantite);
-        System.out.println("Total : " + total);
-        System.out.println("Remise applicable : " + remise);
-    }
-}
-```
 
 ### Analyse détaillée
 
@@ -459,29 +442,3 @@ Remise applicable : true
 6. Quel type choisir pour représenter un prix ? Pourquoi ?
 
 ---
-
-## 6. Travail à rendre
-
-L'étudiant doit fournir :
-
-- `Exercice1.java`
-- `Exercice2.java`
-- `Exercice3.java`
-- `Bulletin.java`
-
-Avec :
-- le code source ;
-- des captures d'écran d'exécution ;
-- les réponses rédigées aux questions.
-
----
-
-## 7. Barème indicatif
-
-- Déclaration correcte des variables : 4 points
-- Utilisation correcte des opérateurs : 4 points
-- Compréhension de `==` : 4 points
-- Explication de l'allocation mémoire : 4 points
-- Résolution du programme concret : 8 points
-
-**Total : 24 points**
