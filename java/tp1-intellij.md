@@ -1,16 +1,16 @@
-# TP1 — Installation de Java et premier programme avec IntelliJ IDEA
+# TP1 : Installation de Java et premier programme avec IntelliJ IDEA
 
 ## Objectifs
-- Installer le JDK
+- Installer le JDK (Déja effectué tp1.md)
 - Installer IntelliJ IDEA
 - Créer un premier projet Java
 - Compiler et exécuter un programme Java avec IntelliJ IDEA
 
 ---
 
-## 1. Installation du JDK
+## 1. Installation du JDK (Déja effectué tp1.md)
 
-### Télécharger
+### Télécharger 
 - OpenJDK (recommandé) : https://adoptium.net/
 
 ### Installer
@@ -116,19 +116,6 @@ Hello, Java!
 3. Ajouter une troisième ligne affichant l’année universitaire
 4. Exécuter le programme dans IntelliJ IDEA
 
-Exemple :
-
-```java
-public class HelloWorld {
-
-    public static void main(String[] args) {
-        System.out.println("Nom : Alice Martin");
-        System.out.println("Formation : Master 1 Informatique");
-        System.out.println("Année : 2025-2026");
-    }
-
-}
-```
 
 ---
 
