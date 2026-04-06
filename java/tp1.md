@@ -1,4 +1,4 @@
-# TP1 — Installation Java et premier programme
+# TP1 : Installation Java et premier programme
 
 ## Objectifs
 - Installer le JDK
