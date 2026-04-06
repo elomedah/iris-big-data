@@ -1,4 +1,4 @@
-# TP2 — Types primitifs, opérateurs, allocation des variables et utilisation de `==`
+# TP2 : Types primitifs, opérateurs, allocation des variables et utilisation de `==`
 
 ## Objectifs
 
