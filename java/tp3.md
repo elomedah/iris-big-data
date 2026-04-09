@@ -1,4 +1,4 @@
-# TP3 — Java: Control Flow, Methods, Arrays, and ArrayList
+# TP3 : Java: Control Flow, Methods, Arrays, and ArrayList
 
 ## 🎯 Objectives
 
@@ -11,9 +11,9 @@ This practical session covers:
 
 ---
 
-#  Part 1 — Control Flow
+#  Part 1 : Control Flow
 
-## Exercise 1 — Even or Odd
+## Exercise 1 : Even or Odd
 
 Write a program that:
 - asks the user for an integer
@@ -21,7 +21,7 @@ Write a program that:
 
 ---
 
-## Exercise 2 — Grade Evaluation
+## Exercise 2 : Grade Evaluation
 
 Input: mark (0–20)
 
@@ -33,7 +33,7 @@ Output:
 
 ---
 
-## Exercise 3 — Day of Week (switch)
+## Exercise 3 : Day of Week (switch)
 
 Input: number (1–7)
 
@@ -46,7 +46,7 @@ Output:
 
 ---
 
-## Exercise 4 — Sum from 1 to n
+## Exercise 4 : Sum from 1 to n
 
 - Ask user for n
 - Compute sum using:
@@ -55,15 +55,15 @@ Output:
 
 ---
 
-## Exercise 5 — Multiplication Table
+## Exercise 5 : Multiplication Table
 
 Display table of n from 1 to 10.
 
 ---
 
-#  Part 2 — Methods
+#  Part 2 : Methods
 
-## Exercise 6 — Simple Method
+## Exercise 6 : Simple Method
 
 ```java
 static void displayLine()
@@ -75,7 +75,7 @@ Call it 3 times.
 
 ---
 
-## Exercise 7 — Method with Return
+## Exercise 7 : Method with Return
 
 ```java
 static int square(int x)
@@ -85,7 +85,7 @@ Return square of a number.
 
 ---
 
-## Exercise 8 — Max Function
+## Exercise 8 : Max Function
 
 ```java
 static int max(int a, int b)
@@ -95,7 +95,7 @@ Return the maximum.
 
 ---
 
-## Exercise 9 — Method Overloading
+## Exercise 9 : Method Overloading
 
 Create:
 
@@ -107,9 +107,9 @@ sum(double a, double b)
 
 ---
 
-#  Part 3 — Arrays
+#  Part 3 : Arrays
 
-## Exercise 10 — Basic Array
+## Exercise 10 : Basic Array
 
 ```java
 int[] values = {4, 8, 1, 9, 3};
@@ -122,7 +122,7 @@ Display:
 
 ---
 
-## Exercise 11 — Sum and Average
+## Exercise 11 : Sum and Average
 
 Compute:
 - sum  
@@ -132,14 +132,14 @@ Use for-each.
 
 ---
 
-## Exercise 12 — Search
+## Exercise 12 : Search
 
 - Ask user for value  
 - Check if exists in array  
 
 ---
 
-## Exercise 13 — Min and Max
+## Exercise 13 : Min and Max
 
 Find:
 - minimum  
@@ -147,9 +147,9 @@ Find:
 
 ---
 
-#  Part 4 — ArrayList
+#  Part 4 : ArrayList
 
-## Exercise 14 — Create List
+## Exercise 14 : Create List
 
 ```java
 ArrayList<Integer> list = new ArrayList<>();
@@ -159,13 +159,13 @@ Add 5 values and display them.
 
 ---
 
-## Exercise 15 — Sum of List
+## Exercise 15 : Sum of List
 
 Compute sum of elements.
 
 ---
 
-## Exercise 16 — Search and Remove
+## Exercise 16 : Search and Remove
 
 - Store names in ArrayList<String>
 - Ask user for a name
@@ -173,7 +173,7 @@ Compute sum of elements.
 
 ---
 
-#  Part 5 — Final Exercise
+#  Part 5 : Final Exercise
 
 ## Student Grades Manager
 
