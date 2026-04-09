@@ -11,7 +11,7 @@ This practical session covers:
 
 ---
 
-# 🧩 Part 1 — Control Flow
+#  Part 1 — Control Flow
 
 ## Exercise 1 — Even or Odd
 
@@ -61,7 +61,7 @@ Display table of n from 1 to 10.
 
 ---
 
-# 🧠 Part 2 — Methods
+#  Part 2 — Methods
 
 ## Exercise 6 — Simple Method
 
@@ -107,7 +107,7 @@ sum(double a, double b)
 
 ---
 
-# 📦 Part 3 — Arrays
+#  Part 3 — Arrays
 
 ## Exercise 10 — Basic Array
 
@@ -147,7 +147,7 @@ Find:
 
 ---
 
-# 📚 Part 4 — ArrayList
+#  Part 4 — ArrayList
 
 ## Exercise 14 — Create List
 
@@ -173,7 +173,7 @@ Compute sum of elements.
 
 ---
 
-# 🚀 Part 5 — Final Exercise
+#  Part 5 — Final Exercise
 
 ## Student Grades Manager
 
@@ -198,20 +198,3 @@ static void displayResult(int mark)
 - Search for a mark  
 
 ---
-
-# 📌 Questions
-
-1. Difference between for and for-each?
-2. Why use Integer instead of int in ArrayList?
-3. Difference between void and return methods?
-4. When to use switch vs if?
-
----
-
-# ✅ Expected Skills
-
-- Master control flow
-- Write reusable methods
-- Manipulate arrays
-- Use dynamic collections (ArrayList)
-- Combine all concepts in a real program
