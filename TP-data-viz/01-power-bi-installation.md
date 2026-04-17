@@ -53,6 +53,10 @@ Si vous n'avez pas les droits d'administration sur votre ordinateur, il est fort
 
 https://learn.microsoft.com/fr-fr/power-bi/create-reports/desktop-excel-stunning-report
 
+### 3. Training 
+https://learn.microsoft.com/fr-fr/training/modules/get-started-with-power-bi/1-introduction 
+https://learn.microsoft.com/fr-fr/power-bi/create-reports/desktop-excel-stunning-report
+
 ### 3. Ouvrir l'application et commencer à jouer 
 Vous pourriez suivre le tutotiel *Getting Started*
 <img width="1135" height="782" alt="image" src="https://github.com/user-attachments/assets/09c6bf7d-862d-4116-a2fc-0727314c91e3" />
