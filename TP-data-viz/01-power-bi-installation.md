@@ -51,12 +51,10 @@ Selon votre système d'exploitation vous devriez télécharger le bon fichier. E
 Si vous n'avez pas les droits d'administration sur votre ordinateur, il est fortement recommandé si vous pouvez installer une machine virtuelle Windows, d'installer cette dernière et suivre la première partie d'installation.
 <img width="491" height="387" alt="image" src="https://github.com/user-attachments/assets/42ae7848-e81a-4d05-b545-6bc36780a6d7" />
 
-https://learn.microsoft.com/fr-fr/power-bi/create-reports/desktop-excel-stunning-report
-
-### 3. Training 
-https://learn.microsoft.com/fr-fr/training/modules/get-started-with-power-bi/1-introduction 
-https://learn.microsoft.com/fr-fr/power-bi/create-reports/desktop-excel-stunning-report
-
 ### 3. Ouvrir l'application et commencer à jouer 
 Vous pourriez suivre le tutotiel *Getting Started*
 <img width="1135" height="782" alt="image" src="https://github.com/user-attachments/assets/09c6bf7d-862d-4116-a2fc-0727314c91e3" />
+
+### 4. Training 
+https://learn.microsoft.com/fr-fr/training/modules/get-started-with-power-bi/1-introduction 
+https://learn.microsoft.com/fr-fr/power-bi/create-reports/desktop-excel-stunning-report
