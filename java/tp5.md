@@ -343,7 +343,7 @@ Afficher tous les employés avec :
 
 ---
 
-# Questions de réflexion (niveau Master)
+# Questions de réflexion 
 
 1. Pourquoi Java interdit-il l'héritage multiple des classes ?
 
@@ -366,24 +366,3 @@ implements
 5. Dans une application réelle, quelles améliorations proposeriez-vous ?
 
 ---
-
-# Bonus
-
-Ajouter une classe :
-
-```java
-VisitingProfessor
-```
-
-héritant de Teacher.
-
-Cette classe possède :
-
-```java
-private int contractDuration;
-```
-
-Adapter l'affichage et le calcul du bonus.
-
-Mettre à jour le diagramme UML.
-
